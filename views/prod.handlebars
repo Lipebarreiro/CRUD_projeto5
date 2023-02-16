@@ -1,0 +1,17 @@
+<h1>Clientes cadastrados</h1>
+
+<div class="prod-container">
+    {{#each listar}}
+
+    <strong> #{{this.id}} </strong> -
+    <a href="/prod/{{this.id}}">{{nome}}</a>
+    <br><br>
+    - Telefone = {{telefone}}
+    <br>
+    - Idade = {{idade}}
+    <br>
+    - Email = {{email}}
+    <br><br>
+    {{/each}}
+
+</div>

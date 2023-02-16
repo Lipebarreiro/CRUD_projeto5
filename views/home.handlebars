@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href=".css">
+
+</head>
+
+<body>
+    <form action="prod/insertprod" method="post" class="needs-validation" novalidate>
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+
+                <input type="text" class="form-control" id="validationCustom01" name="nome" placeholder="Nome"
+                    minLength="5" required>
+                <div class="valid-feedback">
+                    Por favor, insira um nome válido.
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <input type="number" class="form-control" id="validationCustom04" name="idade" placeholder="Idade"
+                    maxLength="2" required>
+                <div class="invalid-feedback">
+                    Por favor, insira uma idade válida.
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+
+                    </div>
+                    <input type="email" class="form-control" id="validationCustomUsername" name="email"
+                        placeholder="exemplo@exemplo.com" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Por favor, insira um email válido.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+
+                <input type="number" class="form-control" id="validationCustom03" name="telefone" placeholder="Telefone"
+                    minLength="5" required>
+                <div class="invalid-feedback">
+                    Por favor, insira um telefone válido.
+                </div>
+            </div>
+
+
+        </div>
+
+        <button class="btn btn-primary" type="submit">Enviar</button>
+    </form>
+</body>
+
+</html>
