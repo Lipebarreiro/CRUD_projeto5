@@ -1,17 +1,33 @@
-<h1>Clientes cadastrados</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="prod-container">
-    {{#each listar}}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-    <strong> #{{this.id}} </strong> -
-    <a href="/prod/{{this.id}}">{{nome}}</a>
-    <br><br>
-    - Telefone = {{telefone}}
-    <br>
-    - Idade = {{idade}}
-    <br>
-    - Email = {{email}}
-    <br><br>
-    {{/each}}
+<body>
+    <h1>Cadastros</h1>
+    <div class="prod-container">
+        {{#each listar}}
 
-</div>
+        <strong> #{{this.id}}</strong> -
+        <a href="/prod/{{this.id}}">{{nome}}</a>
+        <br><br>
+        - Idade: {{idade}}<br>
+        - Email: {{email}}<br>
+        - Telefone: {{telefone}}<br>
+        - Endereço: {{endereco}}<br>
+        - Número da conta: {{numero_da_conta}}<br>
+        - Tipo de conta: {{tipo_de_conta}}<br>
+        - Agência: {{agencia}}<br>
+        - Gerência: {{gerente}}<br>
+        <br><br>
+
+        {{/each}}
+    </div>
+</body>
+
+</html>

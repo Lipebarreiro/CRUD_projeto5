@@ -1,34 +1,51 @@
-<h1>Editar Cliente</h1>
-<hr>
-<form action="/prod/updateprod" method="post">
-    <div class="form-control">
-        <input type="hidden" name="id" id="id" value="{{prod.id}}">
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" placeholder="Digite o nome do cliente" value="{{prod.nome}}">
-    </div>
+<!DOCTYPE html>
+<html lang="en">
 
-    <br>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-    <div class="form-control">
-        <label for="idade">Idade:</label>
-        <input type="number" name="idade" placeholder="Digite a idade" value="{{prod.idade}}">
-    </div>
+<body>
+    <h1>Editar cliente</h1>
+    <form action="/prod/updateprod" method="post">
+        <div class="form-control">
+            <input type="hidden" name="id" id="id" value="{{prod.id}}">
+            <br><br>
+            <label for="name">Nome:</label>
+            <input type="text" name="nome" placeholder="digite o nome do cliente" value="{{prod.nome}}">
+            <br><br>
+            <label for="idade">Idade:</label>
+            <input type="text" name="idade" placeholder="digite o nome do cliente" value="{{prod.idade}}">
+            <br><br>
+            <label for="email">Email:</label>
+            <input type="text" name="email" placeholder="digite o email do cliente" value="{{prod.email}}">
+            <br><br>
+            <label for="telefone">Telefone:</label>
+            <input type="text" name="telefone" placeholder="digite o telefone do cliente" value="{{prod.telefone}}">
+            <br><br>
+            <label for="endereco">Endereço:</label>
+            <input type="text" name="endereco" placeholder="digite o endereço do cliente" value="{{prod.endereco}}">
+            <br><br>
+            <label for="telefone">Número da conta:</label>
+            <input type="number" name="numero_da_conta" placeholder="Digite o número da sua conta"
+                value="{{prod.numero_da_conta}}">
+            <br><br>
+            <label for="endereco">Tipo de conta:</label>
+            <input type="text" name="tipo_de_conta" placeholder="digite o tipo de conta" value="{{prod.tipo_de_conta}}">
+            <br><br>
+            <label for="endereco">Agência:</label>
+            <input type="number" name="agencia" placeholder="digite a sua agência" value="{{prod.agencia}}">
+            <br><br>
+            <label for="endereco">Gerência:</label>
+            <input type="text" name="gerente" placeholder="digite o nome da sua gerência" value="{{prod.gerente}}">
+            <br><br>
+            <input type="submit" value="Editar">
+        </div>
 
-    <br>
+    </form>
+</body>
 
-    <div class="form-control">
-        <label for="email">Email:</label>
-        <input type="text" name="email" placeholder="Digite o email" value="{{prod.email}}">
-    </div>
-
-    <br>
-
-    <div class="form-control">
-        <label for="telefone">Telefone:</label>
-        <input type="number" name="telefone" placeholder="Digite o telefone" value="{{prod.telefone}}">
-    </div>
-
-    <br>
-
-    <input type="submit" value="Editar">
-</form>
+</html>

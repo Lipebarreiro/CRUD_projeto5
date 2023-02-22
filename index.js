@@ -1,10 +1,10 @@
 // imports
-const express = require('express');
-const exphbs = require('express-handlebars');
-const mysql = require('mysql');
+const express = require('express')
+const exphbs = require('express-handlebars')
+const mysql = require('mysql')
 const port = 3000;
 
-// express
+//  express
 const app = express()
 
 // configurar o handlebars
@@ -13,15 +13,9 @@ app.set('view engine', 'handlebars')
 
 app.use(express.static('public'))
 
-
-// rotas 
+// rotas
 app.get('/', (req, res) => {
     res.render('home', { layout: false })
-})
-
-//rota do buscar
-app.get('/busca', (req, res) => {
-    res.render('busca', { layout: false })
 })
 
 app.use(
@@ -30,14 +24,19 @@ app.use(
     })
 )
 
-// inserir dados
+// inserir dados dos clientes
 app.post('/prod/insertprod', (req, res) => {
     const nome = req.body.nome
     const idade = req.body.idade
     const email = req.body.email
     const telefone = req.body.telefone
+    const endereco = req.body.endereco
+    const numero_da_conta = req.body.numero_da_conta
+    const tipo_de_conta = req.body.tipo_de_conta
+    const agencia = req.body.agencia
+    const gerente = req.body.gerente
 
-    const sql = `INSERT INTO cliente (nome,idade,email,telefone) VALUES ('${nome}','${idade}','${email}','${telefone}')`
+    const sql = `INSERT INTO clientes (nome,idade,email,telefone,endereco,numero_da_conta,tipo_de_conta,agencia,gerente) VALUES ('${nome}','${idade}','${email}','${telefone}','${endereco}','${numero_da_conta}','${tipo_de_conta}','${agencia}','${gerente}')`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -45,14 +44,14 @@ app.post('/prod/insertprod', (req, res) => {
         }
 
         res.redirect('/')
-        console.log("Dados cadastrados com sucesso!")
+        console.log("Cadastro com sucesso")
     })
 })
 
 // consulta geral
 app.get('/prod', (req, res) => {
-    const sql = 'SELECT * FROM cliente'
 
+    const sql = 'SELECT * FROM clientes'
     conn.query(sql, function (err, data) {
         if (err) {
             console.log(err)
@@ -67,30 +66,11 @@ app.get('/prod', (req, res) => {
     })
 })
 
-// fim consulta geral
-
-// buscar por formulario
-app.post('/busc/', (req, res) => {
-    const id = req.body.id
-
-    const sql = `SELECT * FROM cliente WHERE id = ${id}`
-
-    conn.query(sql, function (err, data) {
-        if (err) {
-            console.log(err)
-            return
-        }
-
-        const listarProd = data[0]
-        res.render('cliente', { layout: false, listarProd })
-    })
-})
-
-// consulta um registro pelo id (produto.handlebars)
+// consulta um registro pelo id(produto.handlebars)
 app.get('/prod/:id', (req, res) => {
     const id = req.params.id
 
-    const sql = `SELECT * FROM cliente WHERE id = ${id}`
+    const sql = `SELECT * FROM clientes WHERE id = ${id}`
 
     conn.query(sql, function (err, data) {
         if (err) {
@@ -99,15 +79,15 @@ app.get('/prod/:id', (req, res) => {
         }
 
         const listarProd = data[0]
-        res.render('cliente', { layout: false, listarProd })
+
+        res.render('clientes', { layout: false, listarProd })
     })
 })
 
-// pegando para editar registro
+// pegando editar registro
 app.get('/prod/edit/:id', (req, res) => {
     const id = req.params.id
-
-    const sql = `SELECT * FROM cliente WHERE id = ${id}`
+    const sql = `SELECT * FROM clientes where id = ${id}`
 
     conn.query(sql, function (err, data) {
         if (err) {
@@ -127,8 +107,14 @@ app.post('/prod/updateprod', (req, res) => {
     const idade = req.body.idade
     const email = req.body.email
     const telefone = req.body.telefone
+    const endereco = req.body.endereco
+    const numero_da_conta = req.body.numero_da_conta
+    const tipo_de_conta = req.body.tipo_de_conta
+    const agencia = req.body.agencia
+    const gerente = req.body.gerente
 
-    const sql = `UPDATE cliente SET nome =  '${nome}', idade = '${idade}', email = '${email}', telefone = '${telefone}' WHERE id = '${id}'`
+
+    const sql = `UPDATE clientes SET nome = '${nome}', idade = '${idade}', email = '${email}', telefone = '${telefone}', endereco = '${endereco}', numero_da_conta = '${numero_da_conta}', tipo_de_conta = '${tipo_de_conta}', agencia = '${agencia}', gerente = '${gerente}' WHERE id = ${id}`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -140,28 +126,51 @@ app.post('/prod/updateprod', (req, res) => {
     })
 })
 
-// deletando os registros
+// deletar registro
 app.get('/prod/remove/:id', (req, res) => {
     const id = req.params.id
-    const sql = `DELETE FROM cliente WHERE id = '${id}'`
+
+    const sql = `DELETE FROM clientes WHERE id = '${id}'`
 
     conn.query(sql, function (err) {
         if (err) {
-            console.log
+            console.log(err)
             return
         }
-
         res.redirect('/prod')
     })
 })
 
-//conexao banco de dados
+// busca de resgistro
+//rota de busca (busc) que enviar para view cliente cliente.handlebars
+app.post('/busc/', (req, res) => {
+    const id = req.body.id
+
+    const sql = `SELECT * FROM clientes WHERE id = ${id}`
+
+    conn.query(sql, function (err, data) {
+        if (err) {
+            console.log(err)
+            return
+        }
+        const listarProd = data[0]
+        res.render('clientes', { layout: false, listarProd })
+    })
+})
+
+//rota do buscar
+app.get('/busca', (req, res) => {
+    res.render('busca', { layout: false })
+})
+
+//conexao bd
 const conn = mysql.createConnection({
-    host: '127.0.0.1',
-    port: '3307', //muda a porta
+    host: 'localhost',
+    port: '3306', //mudar a porta de acordo com xampp
     user: 'root',
     password: '',
-    database: 'projnode1' //  muda o nome do banco de vcs
+    database: 'resilia_dados' //  muda o nome do banco de vcs
+
 })
 
 conn.connect(function (err) {
@@ -169,10 +178,10 @@ conn.connect(function (err) {
         console.log(err)
     }
 
-    console.log("Cadastro com sucesso")
+    console.log("Conectado com sucesso!")
 });
 
 // servidor
 app.listen(port, () => {
-    console.log(`App rodando na porta ${port}`)
+    console.log(`app rodando ${port}`)
 });
