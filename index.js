@@ -31,12 +31,12 @@ app.post('/prod/insertprod', (req, res) => {
     const email = req.body.email
     const telefone = req.body.telefone
     const endereco_cliente = req.body.endereco_cliente
-    const consorcio_cliente = req.body.consorcio_cliente
-    const emprestimo_cliente = req.body.emprestimo_cliente
-    const cartao_cliente = req.body.cartao_cliente
-    const agencia_cliente = req.body.agencia_cliente
+    const id_do_consorcio = req.body.id_do_consorcio
+    const id_do_emprestimo = req.body.id_do_emprestimo
+    const id_do_cartao = req.body.id_do_cartao
+    const id_da_agencia = req.body.id_da_agencia
 
-    const sql = `INSERT INTO clientes (nome_cliente,cpf,email,telefone,endereco_cliente,consorcio_cliente,emprestimo_cliente,cartao_cliente,agencia_cliente) VALUES ('${nome_cliente}','${cpf}','${email}','${telefone}','${endereco_cliente}','${consorcio_cliente}','${emprestimo_cliente}','${cartao_cliente}','${agencia_cliente}')`
+    const sql = `INSERT INTO clientes (nome_cliente,cpf,email,telefone,endereco_cliente,id_do_consorcio,id_do_emprestimo,id_do_cartao,id_da_agencia) VALUES ('${nome_cliente}','${cpf}','${email}','${telefone}','${endereco_cliente}','${id_do_consorcio}','${id_do_emprestimo}','${id_do_cartao}','${id_da_agencia}')`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -108,14 +108,14 @@ app.post('/prod/updateprod', (req, res) => {
     const email = req.body.email
     const telefone = req.body.telefone
     const endereco_cliente = req.body.endereco_cliente
-    const consorcio_cliente = req.body.consorcio_cliente
-    const emprestimo_cliente = req.body.emprestimo_cliente
-    const cartao_cliente = req.body.cartao_cliente
-    const agencia_cliente = req.body.agencia_cliente
-    
+    const id_do_consorcio = req.body.id_do_consorcio
+    const id_do_emprestimo = req.body.id_do_emprestimo
+    const id_do_cartao = req.body.id_do_cartao
+    const id_da_agencia = req.body.id_da_agencia
 
 
-    const sql = `UPDATE clientes SET nome_cliente = '${nome_cliente}', cpf = '${cpf}', email = '${email}', telefone = '${telefone}', endereco_cliente = '${endereco_cliente}', consorcio_cliente = '${consorcio_cliente}', emprestimo_cliente = '${emprestimo_cliente}', cartao_cliente = '${cartao_cliente}', agencia_cliente = '${agencia_cliente}' WHERE id_do_cliente = ${id_do_cliente}`
+
+    const sql = `UPDATE clientes SET nome_cliente = '${nome_cliente}', cpf = '${cpf}', email = '${email}', telefone = '${telefone}', endereco_cliente = '${endereco_cliente}', id_do_consorcio = '${id_do_consorcio}', id_do_emprestimo = '${id_do_emprestimo}', id_do_cartao = '${id_do_cartao}', id_da_agencia = '${id_da_agencia}' WHERE id_do_cliente = ${id_do_cliente}`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -167,7 +167,7 @@ app.get('/busca', (req, res) => {
 //conexao com o banco de dados
 const conn = mysql.createConnection({
     host: 'localhost',
-    port: '3307', //mudar a porta de acordo com xampp
+    port: '3306', //mudar a porta de acordo com xampp
     user: 'root',
     password: '',
     database: 'banco' //  muda o nome do banco de vcs
