@@ -26,17 +26,17 @@ app.use(
 
 // inserir dados dos clientes
 app.post('/prod/insertprod', (req, res) => {
-    const nome = req.body.nome
-    const idade = req.body.idade
+    const nome_cliente = req.body.nome_cliente
+    const cpf = req.body.cpf
     const email = req.body.email
     const telefone = req.body.telefone
-    const endereco = req.body.endereco
-    const numero_da_conta = req.body.numero_da_conta
-    const tipo_de_conta = req.body.tipo_de_conta
-    const agencia = req.body.agencia
-    const gerente = req.body.gerente
+    const endereco_cliente = req.body.endereco_cliente
+    const consorcio_cliente = req.body.consorcio_cliente
+    const emprestimo_cliente = req.body.emprestimo_cliente
+    const cartao_cliente = req.body.cartao_cliente
+    const agencia_cliente = req.body.agencia_cliente
 
-    const sql = `INSERT INTO clientes (nome,idade,email,telefone,endereco,numero_da_conta,tipo_de_conta,agencia,gerente) VALUES ('${nome}','${idade}','${email}','${telefone}','${endereco}','${numero_da_conta}','${tipo_de_conta}','${agencia}','${gerente}')`
+    const sql = `INSERT INTO clientes (nome_cliente,cpf,email,telefone,endereco_cliente,consorcio_cliente,emprestimo_cliente,cartao_cliente,agencia_cliente) VALUES ('${nome_cliente}','${cpf}','${email}','${telefone}','${endereco_cliente}','${consorcio_cliente}','${emprestimo_cliente}','${cartao_cliente}','${agencia_cliente}')`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -67,10 +67,10 @@ app.get('/prod', (req, res) => {
 })
 
 // consulta um registro pelo id(produto.handlebars)
-app.get('/prod/:id', (req, res) => {
-    const id = req.params.id
+app.get('/prod/:id_do_cliente', (req, res) => {
+    const id_do_cliente = req.params.id_do_cliente
 
-    const sql = `SELECT * FROM clientes WHERE id = ${id}`
+    const sql = `SELECT * FROM clientes WHERE id_do_cliente = ${id_do_cliente}`
 
     conn.query(sql, function (err, data) {
         if (err) {
@@ -85,9 +85,9 @@ app.get('/prod/:id', (req, res) => {
 })
 
 // pegando editar registro
-app.get('/prod/edit/:id', (req, res) => {
-    const id = req.params.id
-    const sql = `SELECT * FROM clientes where id = ${id}`
+app.get('/prod/edit/:id_do_cliente', (req, res) => {
+    const id_do_cliente = req.params.id_do_cliente
+    const sql = `SELECT * FROM clientes where id_do_cliente = ${id_do_cliente}`
 
     conn.query(sql, function (err, data) {
         if (err) {
@@ -102,19 +102,20 @@ app.get('/prod/edit/:id', (req, res) => {
 
 // editando o registro com post
 app.post('/prod/updateprod', (req, res) => {
-    const id = req.body.id
-    const nome = req.body.nome
-    const idade = req.body.idade
+    const id_do_cliente = req.body.id_do_cliente
+    const nome_cliente = req.body.nome_cliente
+    const cpf = req.body.cpf
     const email = req.body.email
     const telefone = req.body.telefone
-    const endereco = req.body.endereco
-    const numero_da_conta = req.body.numero_da_conta
-    const tipo_de_conta = req.body.tipo_de_conta
-    const agencia = req.body.agencia
-    const gerente = req.body.gerente
+    const endereco_cliente = req.body.endereco_cliente
+    const consorcio_cliente = req.body.consorcio_cliente
+    const emprestimo_cliente = req.body.emprestimo_cliente
+    const cartao_cliente = req.body.cartao_cliente
+    const agencia_cliente = req.body.agencia_cliente
+    
 
 
-    const sql = `UPDATE clientes SET nome = '${nome}', idade = '${idade}', email = '${email}', telefone = '${telefone}', endereco = '${endereco}', numero_da_conta = '${numero_da_conta}', tipo_de_conta = '${tipo_de_conta}', agencia = '${agencia}', gerente = '${gerente}' WHERE id = ${id}`
+    const sql = `UPDATE clientes SET nome_cliente = '${nome_cliente}', cpf = '${cpf}', email = '${email}', telefone = '${telefone}', endereco_cliente = '${endereco_cliente}', consorcio_cliente = '${consorcio_cliente}', emprestimo_cliente = '${emprestimo_cliente}', cartao_cliente = '${cartao_cliente}', agencia_cliente = '${agencia_cliente}' WHERE id_do_cliente = ${id_do_cliente}`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -127,10 +128,10 @@ app.post('/prod/updateprod', (req, res) => {
 })
 
 // deletar registro
-app.get('/prod/remove/:id', (req, res) => {
-    const id = req.params.id
+app.get('/prod/remove/:id_do_cliente', (req, res) => {
+    const id_do_cliente = req.params.id_do_cliente
 
-    const sql = `DELETE FROM clientes WHERE id = '${id}'`
+    const sql = `DELETE FROM clientes WHERE id_do_cliente = '${id_do_cliente}'`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -144,9 +145,9 @@ app.get('/prod/remove/:id', (req, res) => {
 // busca de resgistro
 //rota de busca (busc) que enviar para view cliente cliente.handlebars
 app.post('/busc/', (req, res) => {
-    const id = req.body.id
+    const id_do_cliente = req.body.id_do_cliente
 
-    const sql = `SELECT * FROM clientes WHERE id = ${id}`
+    const sql = `SELECT * FROM clientes WHERE id_do_cliente = ${id_do_cliente}`
 
     conn.query(sql, function (err, data) {
         if (err) {
@@ -163,13 +164,13 @@ app.get('/busca', (req, res) => {
     res.render('busca', { layout: false })
 })
 
-//conexao bd
+//conexao com o banco de dados
 const conn = mysql.createConnection({
     host: 'localhost',
-    port: '3306', //mudar a porta de acordo com xampp
+    port: '3307', //mudar a porta de acordo com xampp
     user: 'root',
     password: '',
-    database: 'resilia_dados' //  muda o nome do banco de vcs
+    database: 'banco' //  muda o nome do banco de vcs
 
 })
 

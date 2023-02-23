@@ -13,19 +13,25 @@
     <div class="prod-container">
         {{#each listar}}
 
-        <strong> #{{this.id}}</strong> -
-        <a href="/prod/{{this.id}}">{{nome}}</a>
+        <strong> #{{this.id_do_cliente}}</strong> -
+        <a href="/prod/{{this.id_do_cliente}}">{{nome_cliente}}</a>
         <br><br>
-        - Idade: {{idade}}<br>
-        - Email: {{email}}<br>
-        - Telefone: {{telefone}}<br>
-        - Endereço: {{endereco}}<br>
-        - Número da conta: {{numero_da_conta}}<br>
-        - Tipo de conta: {{tipo_de_conta}}<br>
-        - Agência: {{agencia}}<br>
-        - Gerência: {{gerente}}<br>
+        - CPF: {{cpf}}
+        <br>
+        - Email: {{email}}
+        <br>
+        - Telefone: {{telefone}}
+        <br>
+        - Endereço: {{endereco_cliente}}
+        <br>
+        - ID do Consórcio: {{consorcio_cliente}}
+        <br>
+        - ID do Empréstimo: {{emprestimo_cliente}}
+        <br>
+        - ID do Cartão: {{cartao_cliente}}
+        <br>
+        - ID da Agência: {{agencia_cliente}}
         <br><br>
-
         {{/each}}
     </div>
 </body>

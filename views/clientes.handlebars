@@ -10,19 +10,19 @@
 
 <body>
     <h1>Cliente</h1>
-    <h3>{{listarProd.nome}}</h3>
+    <h3>{{listarProd.nome_cliente}}</h3>
+    <p>CPF: {{listarProd.cpf}}</p>
     <p>Email: {{listarProd.email}}</p>
     <p>Telefone: {{listarProd.telefone}}</p>
-    <p>Idade: {{listarProd.idade}}</p>
-    <p>Endereço: {{listarProd.endereco}}</p>
-    <p>Número da conta: {{listarProd.numero_da_conta}}</p>
-    <p>Tipo de conta: {{listarProd.tipo_de_conta}}</p>
-    <p>Agência: {{listarProd.agencia}}</p>
-    <p>Gerência: {{listarProd.gerente}}</p>
+    <p>Endereço: {{listarProd.endereco_cliente}}</p>
+    <p>ID do Consórcio: {{listarProd.consorcio_cliente}}</p>
+    <p>ID do Empéstimo: {{listarProd.emprestimo_cliente}}</p>
+    <p>ID do Cartão: {{listarProd.cartao_cliente}}</p>
+    <p>ID da Agência: {{listarProd.agencia_cliente}}</p>
 
 
-    <a href="/prod/edit/{{listarProd.id}}"> Editar</a>
-    <a href="/prod/remove/{{listarProd.id}}"> Excluir</a>
+    <a href="/prod/edit/{{listarProd.id_do_cliente}}"> Editar</a>
+    <a href="/prod/remove/{{listarProd.id_do_cliente}}"> Excluir</a>
 
     {{!-- <form action="/prod/remove/{{listarProd.id}}" method="post">
         <br>
