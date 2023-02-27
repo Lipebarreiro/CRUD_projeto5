@@ -11,7 +11,7 @@ const app = express()
 app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
 
-app.use(express.static('public'))
+app.use(express.static('publico'))
 
 // rotas
 app.get('/', (req, res) => {
@@ -167,7 +167,7 @@ app.get('/busca', (req, res) => {
 //conexao com o banco de dados
 const conn = mysql.createConnection({
     host: 'localhost',
-    port: '3307', //mudar a porta de acordo com xampp
+    port: '3306', //mudar a porta de acordo com xampp
     user: 'root',
     password: '',
     database: 'banco' //  muda o nome do banco de vcs
