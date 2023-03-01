@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28-Fev-2023 às 21:43
+-- Tempo de geração: 01-Mar-2023 às 02:37
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -39,7 +39,10 @@ CREATE TABLE `agencia` (
 --
 
 INSERT INTO `agencia` (`id_da_agencia`, `endereco`, `email`, `telefone`) VALUES
-(1, 'ffffff', 'cccc', 'hhhh');
+(1, 'ffffff', 'cccc', 'hhhh'),
+(3, 'undefined', '', ''),
+(4, 'undefined', '', ''),
+(5, 'undefined', '', '');
 
 -- --------------------------------------------------------
 
@@ -61,18 +64,14 @@ CREATE TABLE `cartao` (
 --
 
 INSERT INTO `cartao` (`iddocartao`, `coddeseg`, `dataexp`, `tipodecartao`, `limitecartao`, `saldocartao`) VALUES
-(6, 2243, 2243, 243, 4334, 34343),
-(8, 0, 0, 0, 0, 0),
-(9, 0, 0, 0, 0, 0),
-(10, 0, 0, 0, 0, 0),
-(11, 22, 2, 2, 2, 2),
-(12, 12344, 1221, 1, 122222, 222),
-(15, 0, 0, 0, 0, 0),
-(16, 3423, 1, 3132, 32323, 3232),
-(18, 213, 23, 3, 23, 32),
-(19, 32, 32, 3, 23, 232),
-(20, 3232, 32, 0, 232, 3),
-(21, 32, 3, 3, 23, 23);
+(1, 2243, 2243, 250, 4334, 34343),
+(2, 0, 0, 0, 0, 0),
+(3, 0, 0, 0, 0, 0),
+(4, 0, 0, 0, 0, 0),
+(5, 22, 2, 2, 2, 2),
+(6, 12344, 1221, 1, 122222, 222),
+(7, 0, 0, 0, 0, 0),
+(8, 3423, 1, 3132, 32323, 3232);
 
 -- --------------------------------------------------------
 
@@ -87,7 +86,6 @@ CREATE TABLE `clientes` (
   `email` varchar(30) NOT NULL,
   `telefone` bigint(20) NOT NULL,
   `endereco_cliente` varchar(30) NOT NULL,
-  `id_do_consorcio` int(11) NOT NULL,
   `id_do_emprestimo` int(11) NOT NULL,
   `id_do_cartao` int(11) NOT NULL,
   `id_da_agencia` int(11) NOT NULL
@@ -97,11 +95,11 @@ CREATE TABLE `clientes` (
 -- Extraindo dados da tabela `clientes`
 --
 
-INSERT INTO `clientes` (`id_do_cliente`, `nome_cliente`, `cpf`, `email`, `telefone`, `endereco_cliente`, `id_do_consorcio`, `id_do_emprestimo`, `id_do_cartao`, `id_da_agencia`) VALUES
-(1, 'Felipe Barreiro', 15935786252, 'lipebarreiro3@gmail.com', 21999998888, 'Madureira', 5, 13, 565, 155),
-(2, 'Maria Eduarda', 46575315958, 'eduarda@gmail.com', 21987556145, 'Guadalupe', 65, 24, 21, 105),
-(3, 'Breno Ricardo', 24986135746, 'breno@gmail.com', 21840628154, 'Taquara', 75, 42, 81, 205),
-(4, 'Kaylane Mattos', 15935745685, 'kaylane@gmail.com', 21972465914, 'Anchieta', 21, 45, 62, 215);
+INSERT INTO `clientes` (`id_do_cliente`, `nome_cliente`, `cpf`, `email`, `telefone`, `endereco_cliente`, `id_do_emprestimo`, `id_do_cartao`, `id_da_agencia`) VALUES
+(1, 'Felipe Barreiro', 15935786252, 'lipebarreiro3@gmail.com', 21999998888, 'Madureira', 13, 565, 155),
+(2, 'Maria Eduarda', 46575315958, 'eduarda@gmail.com', 21987556145, 'Guadalupe', 24, 21, 105),
+(3, 'Breno Ricardo', 24986135746, 'breno@gmail.com', 21840628154, 'Taquara', 42, 81, 205),
+(4, 'Kaylane Mattos', 15935745685, 'kaylane@gmail.com', 21972465914, 'Anchieta', 45, 62, 215);
 
 -- --------------------------------------------------------
 
@@ -142,6 +140,14 @@ CREATE TABLE `funcionarios` (
   `telefone` varchar(20) NOT NULL,
   `cargo` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `funcionarios`
+--
+
+INSERT INTO `funcionarios` (`id_funcionario`, `nome`, `cpf`, `email`, `telefone`, `cargo`) VALUES
+(1, 'Felipe Barreiro', '45335175985', 'lipebarreiro3@gmail.com', '21999998888', 'Técnico'),
+(2, 'Maria Eduarda', '16597214256', 'eduarda@gmail.com', '21497214578', 'Técnica');
 
 --
 -- Índices para tabelas despejadas
@@ -185,7 +191,7 @@ ALTER TABLE `funcionarios`
 -- AUTO_INCREMENT de tabela `agencia`
 --
 ALTER TABLE `agencia`
-  MODIFY `id_da_agencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_da_agencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `cartao`
@@ -209,7 +215,7 @@ ALTER TABLE `emprestimo`
 -- AUTO_INCREMENT de tabela `funcionarios`
 --
 ALTER TABLE `funcionarios`
-  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
