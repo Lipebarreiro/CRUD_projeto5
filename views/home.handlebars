@@ -15,7 +15,7 @@
     <div class="algo">
 
         {{!-- Tabela clientes --}}
-        <h1>cadastro cliente</h1>
+        <h1>Cadastro de cliente</h1>
         <form action="prod/insertprod" method="post">
             <div class="form-group">
                 <label for="exampleInputEmail1">Digite seu nome</label>
@@ -74,7 +74,7 @@
 
     {{!-- Tabela emprestimo --}}
     <div class="algo">
-        <h1>cadastro de emprestimo</h1>
+        <h1>Cadastro de empréstimo</h1>
         <form action="emp/insertemp" method="post">
             <div class="form-group">
                 <label for="exampleInputEmail1">Digite seu nome</label>
@@ -117,7 +117,7 @@
 
     {{!-- Tabela agencia --}}
     <div class="algo">
-        <h1>cadastro agencia</h1>
+        <h1>Cadastro de agência</h1>
         <form action="age/insertage" method="post">
             <div class="form-group">
                 <label for="exampleInputEmail1">endereço</label>
@@ -146,7 +146,7 @@
 
     {{!-- Tabela funcionarios --}}
     <div class="algo">
-        <h1>cadastro funcionarios</h1>
+        <h1>Cadastro de funcionários</h1>
         <form action="fun/insertfun" method="post">
             <div class="form-group">
                 <label for="exampleInputEmail1">Nome</label>
@@ -185,41 +185,48 @@
 
     {{!-- Tabela cartao --}}
     <div class="algo">
+        <h1>Cadastro de cartões</h1>
         <form action="cartao/insertcartao" method="post">
-            <div class="form-control">
-                <label for="coddeseg" class="form-label">Codigo de segurança</label>
-                <input type="text" name="coddeseg" class="form-control" id="coddeseg">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Código de segurança</label>
+                <input type="text" class="form-control" id="" name="coddeseg" placeholder="">
             </div>
-            <div class="mb-3">
-                <label for="dataexp" class="form-label">Data de validade </label>
-                <input type="text" name="dataexp" class="form-control" id="exampleInputEmail1"
-                    aria-describedby="dataexp">
+
+            <div class="form-group">
+                <label for="exampleInputCpf1">Data de validade</label>
+                <input type="text" class="form-control" id="exampleInputCpf" name="dataexp" placeholder="">
             </div>
-            <div class="mb-3">
-                <label for="tipodecartao" class="form-label">Tipo do cartao CREDITO ou DEBITO</label>
-                <input type="text" name="tipodecartao" class="form-control" id="tipodecartao">
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Tipo de cartão</label>
+                <input class="form-control" id="" name="tipodecartao" placeholder="">
             </div>
-            <div class="mb-3">
-                <label for="limitecartao" class="form-label">Limite</label>
-                <input type="text" name="limitecartao" class="form-control" id="limitecartao">
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Limite do cartão</label>
+                <input class="form-control" id="" name="limitecartao" placeholder="">
             </div>
-            <div class="mb-3">
-                <label for="saldocartao" class="form-label">Saldo</label>
-                <input type="text" name="saldocartao" class="form-control" id="saldocartao">
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Saldo do cartão</label>
+                <input class="form-control" id="" name="saldocartao" placeholder="">
             </div>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+
+            <div class="form-group">
+                <small class="form-text text-muted">Nunca vamos compartilhar seus dados, com ninguém.</small>
+                <input class="enviar" type="submit">
+            </div>
         </form>
 
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>
