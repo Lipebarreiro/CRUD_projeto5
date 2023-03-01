@@ -13,6 +13,8 @@
 
 <body class="form">
     <div class="algo">
+
+        {{!-- Tabela clientes --}}
         <h1>cadastro cliente</h1>
         <form action="prod/insertprod" method="post">
             <div class="form-group">
@@ -45,12 +47,6 @@
             </div>
 
             <div class="form-group">
-                <label for="exampleInputConsorcio1">Consórcio</label>
-                <input type="number" class="form-control" id="exampleInputConsorcio" name="id_do_consorcio"
-                    placeholder="Digite o ID do consórcio">
-            </div>
-
-            <div class="form-group">
                 <label for="exampleInputEmprestimo1">Empréstimo</label>
                 <input type="number" class="form-control" id="exampleInputEmprestimo" name="id_do_emprestimo"
                     placeholder="Digite o ID do emprestimo">
@@ -76,6 +72,7 @@
         </form>
     </div>
 
+    {{!-- Tabela emprestimo --}}
     <div class="algo">
         <h1>cadastro de emprestimo</h1>
         <form action="emp/insertemp" method="post">
@@ -87,8 +84,8 @@
 
             <div class="form-group">
                 <label for="exampleInputCpf1">valor emprestimo</label>
-                <input type="text" class="form-control" id="exampleInputCpf" name="emprestimo" aria-describedby="emailHelp"
-                    placeholder="CPF">
+                <input type="text" class="form-control" id="exampleInputCpf" name="emprestimo"
+                    aria-describedby="emailHelp" placeholder="CPF">
             </div>
 
             <div class="form-group">
@@ -108,7 +105,7 @@
                     placeholder="Digite um número para contato">
             </div>
 
-       
+
 
             <div class="form-group">
                 <small class="form-text text-muted">Nunca vamos compartilhar seus dados, com ninguém.</small>
@@ -118,6 +115,7 @@
         </form>
     </div>
 
+    {{!-- Tabela agencia --}}
     <div class="algo">
         <h1>cadastro agencia</h1>
         <form action="age/insertage" method="post">
@@ -138,7 +136,44 @@
                 <input class="form-control" id="exampleInputEmail1" name="telefone" placeholder="Digite seu email">
             </div>
 
-       
+            <div class="form-group">
+                <small class="form-text text-muted">Nunca vamos compartilhar seus dados, com ninguém.</small>
+                <input class="enviar" type="submit">
+            </div>
+
+        </form>
+    </div>
+
+    {{!-- Tabela funcionarios --}}
+    <div class="algo">
+        <h1>cadastro funcionarios</h1>
+        <form action="fun/insertfun" method="post">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nome</label>
+                <input type="text" class="form-control" id="exampleInputNomecliente" name="nome"
+                    aria-describedby="emailHelp" placeholder="Digite seu nome">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputCpf1">CPF</label>
+                <input type="text" class="form-control" id="exampleInputCpf" name="cpf" aria-describedby="emailHelp"
+                    placeholder="CPF">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input class="form-control" id="exampleInputEmail1" name="email" placeholder="Digite seu email">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Telefone</label>
+                <input class="form-control" id="exampleInputEmail1" name="telefone" placeholder="Digite seu telefone">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Cargo</label>
+                <input class="form-control" id="exampleInputEmail1" name="cargo" placeholder="Digite o seu cargo">
+            </div>
 
             <div class="form-group">
                 <small class="form-text text-muted">Nunca vamos compartilhar seus dados, com ninguém.</small>
@@ -146,6 +181,35 @@
             </div>
 
         </form>
+    </div>
+
+    {{!-- Tabela cartao --}}
+    <div class="algo">
+        <form action="cartao/insertcartao" method="post">
+            <div class="form-control">
+                <label for="coddeseg" class="form-label">Codigo de segurança</label>
+                <input type="text" name="coddeseg" class="form-control" id="coddeseg">
+            </div>
+            <div class="mb-3">
+                <label for="dataexp" class="form-label">Data de validade </label>
+                <input type="text" name="dataexp" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="dataexp">
+            </div>
+            <div class="mb-3">
+                <label for="tipodecartao" class="form-label">Tipo do cartao CREDITO ou DEBITO</label>
+                <input type="text" name="tipodecartao" class="form-control" id="tipodecartao">
+            </div>
+            <div class="mb-3">
+                <label for="limitecartao" class="form-label">Limite</label>
+                <input type="text" name="limitecartao" class="form-control" id="limitecartao">
+            </div>
+            <div class="mb-3">
+                <label for="saldocartao" class="form-label">Saldo</label>
+                <input type="text" name="saldocartao" class="form-control" id="saldocartao">
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

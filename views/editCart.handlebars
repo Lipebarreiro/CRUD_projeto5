@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/alterar/updateclient" method="POST">
+        <div class="form control">
+            <input type="hidden" name="iddocartao" id="iddocartao" value="{{cartao.iddocartao}}">
+            <label for="nome">numero do cartao</label>
+            <input type="text" name="coddeseg" placeholder="Digite aqui o nome do cartao" value="{{cartao.coddeseg}}">
+        </div>
+
+        <div class="form control">
+            <label for="email">data de validade</label>
+            <input type="text" name="dataexp" placeholder="Digite aqui o email do cartao" value="{{cartao.dataexp}}">
+        </div>
+
+        <div class="form control">
+            <label for="telefone">tipo de cartao</label>
+            <input type="text" name="tipodecartao" placeholder="Digite aqui o telefone do cliente"
+                value="{{cartao.tipodecartao}}">
+        </div>
+
+        <div class="form control">
+            <label for="idade">limite do cartao</label>
+            <input type="text" name="limitecartao" placeholder="Digite aqui o idade do cliente"
+                value="{{cartao.limitecartao}}">
+        </div>
+
+        <div class="form control">
+            <label for="idade">saldo do cartao</label>
+            <input type="text" name="saldocartao" placeholder="Digite aqui o idade do cliente"
+                value="{{cartao.saldocartao}}">
+        </div>
+
+        <input type="Submit" value="Editar">
+</body>
+
+</html>

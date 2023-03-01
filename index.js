@@ -53,7 +53,7 @@ app.post('/prod/insertprod', (req, res) => {
     })
 })
 
-// consulta geral
+// consulta geral da tabela clientes
 app.get('/prod', (req, res) => {
 
     const sql = 'SELECT * FROM clientes'
@@ -71,7 +71,7 @@ app.get('/prod', (req, res) => {
     })
 })
 
-// consulta um registro pelo id(produto.handlebars)
+// consulta um registro pelo id(produto.handlebars) da tabela clientes
 app.get('/prod/:id_do_cliente', (req, res) => {
     const id_do_cliente = req.params.id_do_cliente
 
@@ -89,7 +89,7 @@ app.get('/prod/:id_do_cliente', (req, res) => {
     })
 })
 
-// pegando editar registro
+// pegando para editar registro da tabela clientes
 app.get('/prod/edit/:id_do_cliente', (req, res) => {
     const id_do_cliente = req.params.id_do_cliente
     const sql = `SELECT * FROM clientes where id_do_cliente = ${id_do_cliente}`
@@ -105,7 +105,7 @@ app.get('/prod/edit/:id_do_cliente', (req, res) => {
     })
 })
 
-// editando o registro com post 
+// editando o registro com post na tabela clientes
 app.post('/prod/updateprod', (req, res) => {
     const id_do_cliente = req.body.id_do_cliente
     const nome_cliente = req.body.nome_cliente
@@ -117,8 +117,6 @@ app.post('/prod/updateprod', (req, res) => {
     const id_do_emprestimo = req.body.id_do_emprestimo
     const id_do_cartao = req.body.id_do_cartao
     const id_da_agencia = req.body.id_da_agencia
-
-
 
     const sql = `UPDATE clientes SET nome_cliente = '${nome_cliente}', cpf = '${cpf}', email = '${email}', telefone = '${telefone}', endereco_cliente = '${endereco_cliente}', id_do_consorcio = '${id_do_consorcio}', id_do_emprestimo = '${id_do_emprestimo}', id_do_cartao = '${id_do_cartao}', id_da_agencia = '${id_da_agencia}' WHERE id_do_cliente = ${id_do_cliente}`
 
@@ -132,7 +130,7 @@ app.post('/prod/updateprod', (req, res) => {
     })
 })
 
-// deletar registro
+// deletar registro da tabela clientes
 app.get('/prod/remove/:id_do_cliente', (req, res) => {
     const id_do_cliente = req.params.id_do_cliente
 
@@ -147,7 +145,7 @@ app.get('/prod/remove/:id_do_cliente', (req, res) => {
     })
 })
 
-// busca de resgistro
+// busca de resgistro da tabela clientes
 //rota de busca (busc) que enviar para view cliente cliente.handlebars
 app.post('/busc/', (req, res) => {
     const id_do_cliente = req.body.id_do_cliente
@@ -183,8 +181,7 @@ app.post('/emp/insertemp', (req, res) => {
     })
 })
 
-
-// consulta geral
+// consulta geral da tabela emprestimo
 app.get('/emp', (req, res) => {
 
     const sql = 'SELECT * FROM emprestimo'
@@ -202,7 +199,7 @@ app.get('/emp', (req, res) => {
     })
 })
 
-// consulta um registro pelo id(produto.handlebars)
+// consulta um registro pelo id(produto.handlebars) da tabela emprestimo
 app.get('/emp/:id_do_emprestimo', (req, res) => {
     const id_do_emprestimo = req.params.id_do_emprestimo
 
@@ -220,7 +217,7 @@ app.get('/emp/:id_do_emprestimo', (req, res) => {
     })
 })
 
-// pegando editar registro
+// pegando para editar registro da tabela emprestimo
 app.get('/emp/editE/:id_do_emprestimo', (req, res) => {
     const id_do_emprestimo = req.params.id_do_emprestimo
     const sql = `SELECT * FROM emprestimo where id_do_emprestimo = ${id_do_emprestimo}`
@@ -236,7 +233,7 @@ app.get('/emp/editE/:id_do_emprestimo', (req, res) => {
     })
 })
 
-// editando o registro com post 
+// editando o registro com post na tabela emprestimo
 app.post('/emp/updateemp', (req, res) => {
     const id_do_emprestimo = req.body.id_do_emprestimo
     const nome = req.body.nome
@@ -258,7 +255,7 @@ app.post('/emp/updateemp', (req, res) => {
     })
 })
 
-// deletar registro
+// deletar registro da tabela emprestimo
 app.get('/emp/remove/:id_do_emprestimo', (req, res) => {
     const id_do_emprestimo = req.params.id_do_emprestimo
 
@@ -273,7 +270,7 @@ app.get('/emp/remove/:id_do_emprestimo', (req, res) => {
     })
 })
 
-// busca de resgistro
+// busca de resgistro da tabela emprestimo
 //rota de busca (busque) que enviar para view emprestimo.handlebars
 app.post('/busque/', (req, res) => {
     const id_do_emprestimo = req.body.emprestimo
@@ -289,29 +286,6 @@ app.post('/busque/', (req, res) => {
         res.render('emprestimo', { layout: false, listarEmp })
     })
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // inserir dados na tabela agencia
@@ -332,8 +306,7 @@ app.post('/age/insertage', (req, res) => {
     })
 })
 
-
-// consulta geral agencia
+// consulta geral da tabela agencia
 app.get('/age', (req, res) => {
 
     const sql = 'SELECT * FROM agencia'
@@ -351,7 +324,7 @@ app.get('/age', (req, res) => {
     })
 })
 
-// consulta um registro pelo id(produto.handlebars)
+// consulta um registro pelo id(produto.handlebars) na tabela agencia
 app.get('/age/:id_da_agencia', (req, res) => {
     const id_da_agencia = req.params.id_da_agencia
 
@@ -369,7 +342,7 @@ app.get('/age/:id_da_agencia', (req, res) => {
     })
 })
 
-// pegando editar registro
+// pegando para editar registro da tabela agencia
 app.get('/age/editA/:id_da_agencia', (req, res) => {
     const id_da_agencia = req.params.id_da_agencia
     const sql = `SELECT * FROM agencia where id_da_agencia = ${id_da_agencia}`
@@ -385,7 +358,7 @@ app.get('/age/editA/:id_da_agencia', (req, res) => {
     })
 })
 
-// editando o registro com post 
+// editando o registro com post na tabela agencia
 app.post('/age/updateage', (req, res) => {
     const id_da_agencia = req.body.id_da_agencia
     const endereco = req.body.endereco
@@ -405,7 +378,7 @@ app.post('/age/updateage', (req, res) => {
     })
 })
 
-// deletar registro
+// deletar registro da tabela agencia
 app.get('/age/remove/:id_da_agencia', (req, res) => {
     const id_da_agencia = req.params.id_da_agencia
 
@@ -420,7 +393,7 @@ app.get('/age/remove/:id_da_agencia', (req, res) => {
     })
 })
 
-// busca de resgistro
+// busca de resgistro na tabela agencia
 //rota de busca (busque) que enviar para view emprestimo.handlebars
 app.post('/buscaA/', (req, res) => {
     const id_da_agencia = req.body.id_da_agencia
@@ -438,14 +411,262 @@ app.post('/buscaA/', (req, res) => {
 })
 
 
+// inserir dados na tabela funcionarios
+app.post('/fun/insertfun', (req, res) => {
+    const nome = req.body.nome
+    const cpf = req.body.cpf
+    const email = req.body.email
+    const telefone = req.body.telefone
+    const cargo = req.body.cargo
 
+    const sql = `INSERT INTO funcionarios (nome,cpf,email,telefone,cargo) VALUES ('${nome}','${cpf}','${email}','${telefone}','${cargo}')`
+
+    conn.query(sql, function (err) {
+        if (err) {
+            console.log(err)
+        }
+
+        res.redirect('/')
+        console.log("Cadastro com sucesso")
+    })
+})
+
+// consulta geral da tabela funcionarios
+app.get('/fun', (req, res) => {
+
+    const sql = 'SELECT * FROM funcionarios'
+    conn.query(sql, function (err, data) {
+        if (err) {
+            console.log(err)
+            return
+        }
+
+        const listar = data
+
+        console.log(listar)
+
+        res.render('fun', { layout: false, listar })
+    })
+})
+
+// consulta um registro pelo id(produto.handlebars) na tabela funcionarios
+app.get('/fun/:id_funcionario', (req, res) => {
+    const id_funcionario = req.params.id_funcionario
+
+    const sql = `SELECT * FROM funcionarios WHERE id_funcionario = ${id_funcionario}`
+
+    conn.query(sql, function (err, data) {
+        if (err) {
+            console.log(err)
+            return
+        }
+
+        const listarFun = data[0]
+
+        res.render('funcionarios', { layout: false, listarFun })
+    })
+})
+
+// pegando para editar registro da tabela funcionarios
+app.get('/fun/editF/:id_funcionario', (req, res) => {
+    const id_funcionario = req.params.id_funcionario
+    const sql = `SELECT * FROM funcionarios where id_funcionario = ${id_funcionario}`
+
+    conn.query(sql, function (err, data) {
+        if (err) {
+            console.log(err)
+            return
+        }
+
+        const fun = data[0]
+        res.render('editF', { layout: false, fun })
+    })
+})
+
+// editando o registro com post na tabela funcionarios
+app.post('/fun/updatefun', (req, res) => {
+    const id_funcionario = req.body.id_funcionario
+    const nome = req.body.nome
+    const cpf = req.body.cpf
+    const email = req.body.email
+    const telefone = req.body.telefone
+    const cargo = req.body.cargo
+
+
+    const sql = `UPDATE funcionarios SET nome = '${nome}', cpf = '${cpf}', email = '${email}', telefone = '${telefone}', cargo = '${cargo}' WHERE id_funcionario = ${id_funcionario}`
+
+    conn.query(sql, function (err) {
+        if (err) {
+            console.log(err)
+            return
+        }
+
+        res.redirect('/fun')
+    })
+})
+
+// deletar registro da tabela funcionarios
+app.get('/fun/remove/:id_funcionario', (req, res) => {
+    const id_funcionario = req.params.id_funcionario
+
+    const sql = `DELETE FROM funcionarios WHERE id_funcionario = '${id_funcionario}'`
+
+    conn.query(sql, function (err) {
+        if (err) {
+            console.log(err)
+            return
+        }
+        res.redirect('/fun')
+    })
+})
+
+// busca de resgistro na tabela funcionarios
+//rota de busca (busque) que enviar para view funcionarios.handlebars
+app.post('/buscaF/', (req, res) => {
+    const id_funcionario = req.body.id_funcionario
+
+    const sql = `SELECT * FROM funcionarios WHERE id_funcionario = ${id_funcionario}`
+
+    conn.query(sql, function (err, data) {
+        if (err) {
+            console.log(err)
+            return
+        }
+        const listarFun = data[0]
+        res.render('funcionarios', { layout: false, listarFun })
+    })
+})
+
+
+// inserir dados na tabela cartao
+app.post('/cartao/insertcartao', (req, res) => {
+    const coddeseg = req.body.coddeseg
+    const dataexp = req.body.dataexp
+    const tipodecartao = req.body.tipodecartao
+    const limitecartao = req.body.limitecartao
+    const saldocartao = req.body.saldocartao
+    const sql = `INSERT INTO cartao (coddeseg, dataexp, tipodecartao, limitecartao, saldocartao) VALUES ( '${coddeseg}','${dataexp}','${tipodecartao}','${limitecartao}','${saldocartao}')`
+    conn.query(sql, function (err) {
+        if (err) {
+            console.log(err)
+        }
+
+        res.redirect('/')
+        console.log("Cadastro com sucesso")
+    })
+})
+
+// consulta geral da tabela cartao
+app.get('/cartoes', (req, res) => {
+    const sql = 'SELECT * FROM cartao'
+
+    conn.query(sql, function (err, data) {
+        if (err) {
+            console.log(err)
+            return
+        }
+        const listar = data
+
+        console.log(listar)
+
+        res.render('cartoes', { layout: false, listar })
+    })
+})
+
+
+// consulta um registro pelo iddocartao (cartao.handlebars) na tabela cartao
+app.get('/cartao/:iddocartao', (req, res) => {
+    const iddocartao = req.params.iddocartao
+
+    const sql = `SELECT * FROM cartao WHERE iddocartao = ${iddocartao}`
+
+    conn.query(sql, function (err, data) {
+        if (err) {
+            console.log(err)
+            return
+        }
+        const listarCartao = data[0]
+        res.render('cartao', { layout: false, listarCartao })
+    })
+})
+
+// pegando para editar registro da tabela cartao
+app.get('/cartao/editCart/:iddocartao', (req, res) => {
+    const iddocartao = req.params.iddocartao
+
+    const sql = `SELECT * FROM cartao WHERE iddocartao = ${iddocartao}`
+
+    conn.query(sql, function (err, data) {
+        if (err) {
+            console.log(err)
+            return
+        }
+
+        const cartao = data[0]
+        res.render('editCart', { layout: false, cartao })
+    })
+})
+
+// editando o registro com post na tabela cartao
+app.post('/alterar/updateclient', (req, res) => {
+    const iddocartao = req.body.iddocartao
+    const coddeseg = req.body.coddeseg
+    const dataexp = req.body.dataexp
+    const tipodecartao = req.body.tipodecartao
+    const limitecartao = req.body.limitecartao
+    const saldocartao = req.body.saldocartao
+    const sql = `UPDATE cartao SET coddeseg = '${coddeseg}', dataexp = '${dataexp}', tipodecartao = '${tipodecartao}', limitecartao= '${limitecartao}', saldocartao = '${saldocartao}' WHERE iddocartao = '${iddocartao}' `
+
+    conn.query(sql, function (err) {
+        if (err) {
+            console.log(err)
+        }
+
+        res.redirect(`/cartao/${iddocartao}`)
+        console.log("Alterado com sucesso")
+    })
+})
+
+// deletar registro da tabela cartao
+app.get('/cartao/remove/:iddocartao', (req, res) => {
+    const iddocartao = req.params.iddocartao
+
+    const sql = `DELETE FROM cartao WHERE iddocartao = ${iddocartao} `
+
+    conn.query(sql, function (err) {
+        if (err) {
+            console.log(err)
+            return
+        }
+
+        res.redirect('/cartoes')
+        console.log("excluido com sucesso")
+    })
+})
+
+// busca de resgistro na tabela cartao
+app.post('/buscarcart/', (req, res) => {
+    const iddocartao = req.body.iddocartao
+
+    const sql = `SELECT * FROM cartao WHERE iddocartao = ${iddocartao}`
+
+    conn.query(sql, function (err, data) {
+        if (err) {
+            console.log(err)
+            return
+        }
+
+        const listarCartao = data[0]
+        res.render('cartao', { layout: false, listarCartao })
+    })
+})
 
 
 
 //conexao com o banco de dados
 const conn = mysql.createConnection({
     host: 'localhost',
-    port: '3307', //mudar a porta de acordo com xampp
+    port: '3306', //mudar a porta de acordo com xampp
     user: 'root',
     password: '',
     database: 'banco' //  muda o nome do banco de vcs

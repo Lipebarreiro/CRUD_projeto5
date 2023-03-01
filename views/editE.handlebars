@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Editar </h1>
     <form action="/emp/updateemp" method="post">
@@ -15,17 +17,17 @@
             <label for="name">Nome:</label>
             <input type="text" name="nome" placeholder="Digite o nome do cliente" value="{{emp.nome}}">
             <br><br>
-            <label for="name">valor emprestimo:</label>
-            <input type="text" name="emprestimo" placeholder="Digite o cpf do cliente" value="{{emp.valor_emprestimo}}">
+            <label for="name">Valor do empréstimo:</label>
+            <input type="text" name="emprestimo" placeholder="Digite o valor do empréstimo" value="{{emp.valor_emprestimo}}">
             <br><br>
-            <label for="email">parcelas:</label>
-            <input type="text" name="parcelas" placeholder="Digite o email do cliente" value="{{emp.parcelas}}">
+            <label for="email">Parcelas:</label>
+            <input type="text" name="parcelas" placeholder="Digite quantas parcelas" value="{{emp.parcelas}}">
             <br><br>
-            <label for="telefone">juros:</label>
-            <input type="text" name="juros" placeholder="Digite o telefone do cliente" value="{{juros}}">
+            <label for="telefone">Juros:</label>
+            <input type="text" name="juros" placeholder="Juros" value="{{juros}}">
             <br><br>
-            <label for="endereco_cliente">data:</label>
-            <input type="text" name="data" placeholder="Digite o endereço do cliente" value="{{data}}">
+            <label for="endereco_cliente">Data:</label>
+            <input type="text" name="data" placeholder="Digite a data do empréstimo" value="{{data}}">
             <br><br>
             <input type="submit" value="Editar">
         </div>
@@ -33,4 +35,5 @@
     </form>
 
 </body>
+
 </html>

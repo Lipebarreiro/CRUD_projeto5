@@ -1,0 +1,12 @@
+<h1> Clientes cadastrados</h1>
+
+<class="prod-container">
+    {{#each listar}}
+
+    <strong>#{{this.iddocartao}} </strong> -
+    Codigo de segurança: <a href="/cartao/{{this.iddocartao}}"> {{coddeseg}} </a> - Data de Validade: {{dataexp}} - Tipo
+    do cartao {{tipodecartao}} - Limite {{limitecartao}} - Saldo {{saldocartao}} <br> <br>
+
+
+    {{/each}}
+    </div>
