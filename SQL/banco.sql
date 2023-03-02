@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Mar-2023 às 01:53
+-- Tempo de geração: 02-Mar-2023 às 21:03
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -62,8 +62,7 @@ CREATE TABLE `cartao` (
 
 INSERT INTO `cartao` (`iddocartao`, `coddeseg`, `dataexp`, `tipodecartao`, `limitecartao`, `saldocartao`) VALUES
 (1, 215759654, '02/2030', 'Crédito', 5000, 2500),
-(2, 753159852, '01/2028', 'Débito', 3500, 1200),
-(3, 786324950, '12/2028', 'Débito', 4200, 2200);
+(2, 753159852323, '01/20282', 'Débitoqw', 3500, 1200);
 
 -- --------------------------------------------------------
 
@@ -114,9 +113,9 @@ CREATE TABLE `contas` (
 
 INSERT INTO `contas` (`id_da_conta`, `nome_cliente`, `id_do_cliente`, `tipo_de_conta`, `saldo`, `id_da_agencia`) VALUES
 (1, 'Felipe Barreiro', 25, 'Poupança', 4500, 105),
-(3, 'Maria Eduarda', 21, 'Salário', 50000, 106),
-(4, 'Breno Ricardo', 26, 'Poupança', 45000, 601),
-(5, 'Kaylane Mattos', 45, 'Corrente', 7500, 95);
+(2, 'Maria Eduarda', 21, 'Salário', 50000, 106),
+(3, 'Breno Ricardo', 26, 'Poupança', 45000, 601),
+(4, 'Kaylane Mattos', 45, 'Corrente', 7500, 95);
 
 -- --------------------------------------------------------
 
@@ -217,7 +216,7 @@ ALTER TABLE `agencia`
 -- AUTO_INCREMENT de tabela `cartao`
 --
 ALTER TABLE `cartao`
-  MODIFY `iddocartao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `iddocartao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de tabela `clientes`
@@ -229,7 +228,7 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de tabela `contas`
 --
 ALTER TABLE `contas`
-  MODIFY `id_da_conta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_da_conta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `emprestimo`
