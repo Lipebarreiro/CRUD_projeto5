@@ -36,18 +36,16 @@ app.post('/prod/insertprod', (req, res) => {
     const email = req.body.email
     const telefone = req.body.telefone
     const endereco_cliente = req.body.endereco_cliente
-    const id_do_consorcio = req.body.id_do_consorcio
     const id_do_emprestimo = req.body.id_do_emprestimo
     const id_do_cartao = req.body.id_do_cartao
     const id_da_agencia = req.body.id_da_agencia
 
-    const sql = `INSERT INTO clientes (nome_cliente,cpf,email,telefone,endereco_cliente,id_do_consorcio,id_do_emprestimo,id_do_cartao,id_da_agencia) VALUES ('${nome_cliente}','${cpf}','${email}','${telefone}','${endereco_cliente}','${id_do_consorcio}','${id_do_emprestimo}','${id_do_cartao}','${id_da_agencia}')`
+    const sql = `INSERT INTO clientes (nome_cliente,cpf,email,telefone,endereco_cliente,id_do_emprestimo,id_do_cartao,id_da_agencia) VALUES ('${nome_cliente}','${cpf}','${email}','${telefone}','${endereco_cliente}','${id_do_emprestimo}','${id_do_cartao}','${id_da_agencia}')`
 
     conn.query(sql, function (err) {
         if (err) {
             console.log(err)
         }
-
         res.redirect('/')
         console.log("Cadastro com sucesso")
     })
@@ -62,11 +60,8 @@ app.get('/prod', (req, res) => {
             console.log(err)
             return
         }
-
         const listar = data
-
         console.log(listar)
-
         res.render('prod', { layout: false, listar })
     })
 })
@@ -82,9 +77,7 @@ app.get('/prod/:id_do_cliente', (req, res) => {
             console.log(err)
             return
         }
-
         const listarProd = data[0]
-
         res.render('clientes', { layout: false, listarProd })
     })
 })
@@ -99,7 +92,6 @@ app.get('/prod/edit/:id_do_cliente', (req, res) => {
             console.log(err)
             return
         }
-
         const prod = data[0]
         res.render('edit', { layout: false, prod })
     })
@@ -113,19 +105,17 @@ app.post('/prod/updateprod', (req, res) => {
     const email = req.body.email
     const telefone = req.body.telefone
     const endereco_cliente = req.body.endereco_cliente
-    const id_do_consorcio = req.body.id_do_consorcio
     const id_do_emprestimo = req.body.id_do_emprestimo
     const id_do_cartao = req.body.id_do_cartao
     const id_da_agencia = req.body.id_da_agencia
 
-    const sql = `UPDATE clientes SET nome_cliente = '${nome_cliente}', cpf = '${cpf}', email = '${email}', telefone = '${telefone}', endereco_cliente = '${endereco_cliente}', id_do_consorcio = '${id_do_consorcio}', id_do_emprestimo = '${id_do_emprestimo}', id_do_cartao = '${id_do_cartao}', id_da_agencia = '${id_da_agencia}' WHERE id_do_cliente = ${id_do_cliente}`
+    const sql = `UPDATE clientes SET nome_cliente = '${nome_cliente}', cpf = '${cpf}', email = '${email}', telefone = '${telefone}', endereco_cliente = '${endereco_cliente}', id_do_emprestimo = '${id_do_emprestimo}', id_do_cartao = '${id_do_cartao}', id_da_agencia = '${id_da_agencia}' WHERE id_do_cliente = ${id_do_cliente}`
 
     conn.query(sql, function (err) {
         if (err) {
             console.log(err)
             return
         }
-
         res.redirect('/prod')
     })
 })
@@ -175,7 +165,6 @@ app.post('/emp/insertemp', (req, res) => {
         if (err) {
             console.log(err)
         }
-
         res.redirect('/')
         console.log("Cadastro com sucesso")
     })
@@ -190,11 +179,8 @@ app.get('/emp', (req, res) => {
             console.log(err)
             return
         }
-
         const listar = data
-
         console.log(listar)
-
         res.render('emp', { layout: false, listar })
     })
 })
@@ -210,9 +196,7 @@ app.get('/emp/:id_do_emprestimo', (req, res) => {
             console.log(err)
             return
         }
-
         const listarEmp = data[0]
-
         res.render('emprestimo', { layout: false, listarEmp })
     })
 })
@@ -227,7 +211,6 @@ app.get('/emp/editE/:id_do_emprestimo', (req, res) => {
             console.log(err)
             return
         }
-
         const emp = data[0]
         res.render('editE', { layout: false, emp })
     })
@@ -242,7 +225,6 @@ app.post('/emp/updateemp', (req, res) => {
     const juros = req.body.juros
     const data = req.body.data
 
-
     const sql = `UPDATE emprestimo SET nome = '${nome}', valor_emprestimo = '${valor}', parcelas = '${parcelas}', juros = '${juros}', data = '${data}' WHERE id_do_emprestimo = ${id_do_emprestimo}`
 
     conn.query(sql, function (err) {
@@ -250,7 +232,6 @@ app.post('/emp/updateemp', (req, res) => {
             console.log(err)
             return
         }
-
         res.redirect('/emp')
     })
 })
@@ -300,7 +281,6 @@ app.post('/age/insertage', (req, res) => {
         if (err) {
             console.log(err)
         }
-
         res.redirect('/')
         console.log("Cadastro com sucesso")
     })
@@ -315,11 +295,8 @@ app.get('/age', (req, res) => {
             console.log(err)
             return
         }
-
         const listar = data
-
         console.log(listar)
-
         res.render('age', { layout: false, listar })
     })
 })
@@ -335,9 +312,7 @@ app.get('/age/:id_da_agencia', (req, res) => {
             console.log(err)
             return
         }
-
         const listarAge = data[0]
-
         res.render('agencia', { layout: false, listarAge })
     })
 })
@@ -352,7 +327,6 @@ app.get('/age/editA/:id_da_agencia', (req, res) => {
             console.log(err)
             return
         }
-
         const age = data[0]
         res.render('editA', { layout: false, age })
     })
@@ -365,7 +339,6 @@ app.post('/age/updateage', (req, res) => {
     const email = req.body.email
     const telefone = req.body.telefone
 
-
     const sql = `UPDATE agencia SET endereco = '${endereco}', email = '${email}', telefone = '${telefone}' WHERE id_da_agencia = ${id_da_agencia}`
 
     conn.query(sql, function (err) {
@@ -373,7 +346,6 @@ app.post('/age/updateage', (req, res) => {
             console.log(err)
             return
         }
-
         res.redirect('/age')
     })
 })
@@ -425,7 +397,6 @@ app.post('/fun/insertfun', (req, res) => {
         if (err) {
             console.log(err)
         }
-
         res.redirect('/')
         console.log("Cadastro com sucesso")
     })
@@ -440,11 +411,8 @@ app.get('/fun', (req, res) => {
             console.log(err)
             return
         }
-
         const listar = data
-
         console.log(listar)
-
         res.render('fun', { layout: false, listar })
     })
 })
@@ -460,9 +428,7 @@ app.get('/fun/:id_funcionario', (req, res) => {
             console.log(err)
             return
         }
-
         const listarFun = data[0]
-
         res.render('funcionarios', { layout: false, listarFun })
     })
 })
@@ -477,7 +443,6 @@ app.get('/fun/editF/:id_funcionario', (req, res) => {
             console.log(err)
             return
         }
-
         const fun = data[0]
         res.render('editF', { layout: false, fun })
     })
@@ -492,7 +457,6 @@ app.post('/fun/updatefun', (req, res) => {
     const telefone = req.body.telefone
     const cargo = req.body.cargo
 
-
     const sql = `UPDATE funcionarios SET nome = '${nome}', cpf = '${cpf}', email = '${email}', telefone = '${telefone}', cargo = '${cargo}' WHERE id_funcionario = ${id_funcionario}`
 
     conn.query(sql, function (err) {
@@ -500,7 +464,6 @@ app.post('/fun/updatefun', (req, res) => {
             console.log(err)
             return
         }
-
         res.redirect('/fun')
     })
 })
@@ -550,7 +513,6 @@ app.post('/cartao/insertcartao', (req, res) => {
         if (err) {
             console.log(err)
         }
-
         res.redirect('/')
         console.log("Cadastro com sucesso")
     })
@@ -566,9 +528,7 @@ app.get('/cartoes', (req, res) => {
             return
         }
         const listar = data
-
         console.log(listar)
-
         res.render('cartoes', { layout: false, listar })
     })
 })
@@ -601,7 +561,6 @@ app.get('/cartao/editCart/:iddocartao', (req, res) => {
             console.log(err)
             return
         }
-
         const cartao = data[0]
         res.render('editCart', { layout: false, cartao })
     })
@@ -621,7 +580,6 @@ app.post('/alterar/updateclient', (req, res) => {
         if (err) {
             console.log(err)
         }
-
         res.redirect(`/cartao/${iddocartao}`)
         console.log("Alterado com sucesso")
     })
@@ -638,7 +596,6 @@ app.get('/cartao/remove/:iddocartao', (req, res) => {
             console.log(err)
             return
         }
-
         res.redirect('/cartoes')
         console.log("excluido com sucesso")
     })
@@ -655,7 +612,6 @@ app.post('/buscarcart/', (req, res) => {
             console.log(err)
             return
         }
-
         const listarCartao = data[0]
         res.render('cartao', { layout: false, listarCartao })
     })
@@ -663,13 +619,131 @@ app.post('/buscarcart/', (req, res) => {
 
 
 
+// inserir dados na tabela contas
+app.post('/cont/insertcont', (req, res) => {
+    const nome_cliente = req.body.nome_cliente
+    const id_do_cliente = req.body.id_do_cliente
+    const tipo_de_conta = req.body.tipo_de_conta
+    const saldo = req.body.saldo
+    const id_da_agencia = req.body.id_da_agencia
+
+    const sql = `INSERT INTO contas (nome_cliente,id_do_cliente,tipo_de_conta,saldo,id_da_agencia) VALUES ('${nome_cliente}','${id_do_cliente}','${tipo_de_conta}','${saldo}','${id_da_agencia}')`
+
+    conn.query(sql, function (err) {
+        if (err) {
+            console.log(err)
+        }
+        res.redirect('/')
+        console.log("Cadastro com sucesso")
+    })
+})
+
+// consulta geral da tabela contas
+app.get('/cont', (req, res) => {
+
+    const sql = 'SELECT * FROM contas'
+    conn.query(sql, function (err, data) {
+        if (err) {
+            console.log(err)
+            return
+        }
+        const listar = data
+        console.log(listar)
+        res.render('cont', { layout: false, listar })
+    })
+})
+
+// consulta um registro pelo id(produto.handlebars) da tabela contas
+app.get('/cont/:id_da_conta', (req, res) => {
+    const id_da_conta = req.params.id_da_conta
+
+    const sql = `SELECT * FROM contas WHERE id_da_conta = ${id_da_conta}`
+
+    conn.query(sql, function (err, data) {
+        if (err) {
+            console.log(err)
+            return
+        }
+        const listarCont = data[0]
+        res.render('conta', { layout: false, listarCont })
+    })
+})
+
+
+// pegando para editar registro da tabela contas
+app.get('/cont/editCont/:id_da_conta', (req, res) => {
+    const id_da_conta = req.params.id_da_conta
+    const sql = `SELECT * FROM contas where id_da_conta = ${id_da_conta}`
+
+    conn.query(sql, function (err, data) {
+        if (err) {
+            console.log(err)
+            return
+        }
+        const cont = data[0]
+        res.render('editCont', { layout: false, cont })
+    })
+})
+
+
+// editando o registro com post na tabela contas
+app.post('/cont/updatecont', (req, res) => {
+    const id_da_conta = req.body.id_da_conta
+    const nome_cliente = req.body.nome_cliente
+    const id_do_cliente = req.body.id_do_cliente
+    const tipo_de_conta = req.body.tipo_de_conta
+    const saldo = req.body.saldo
+    const id_da_agencia = req.body.id_da_agencia
+
+    const sql = `UPDATE contas SET nome_cliente = '${nome_cliente}', id_do_cliente = '${id_do_cliente}', tipo_de_conta = '${tipo_de_conta}', saldo = '${saldo}', id_da_agencia = '${id_da_agencia}' WHERE id_da_conta = ${id_da_conta}`
+
+    conn.query(sql, function (err) {
+        if (err) {
+            console.log(err)
+            return
+        }
+        res.redirect('/cont')
+    })
+})
+
+// deletar registro da tabela contas
+app.get('/cont/remove/:id_da_conta', (req, res) => {
+    const id_da_conta = req.params.id_da_conta
+
+    const sql = `DELETE FROM contas WHERE id_da_conta = '${id_da_conta}'`
+
+    conn.query(sql, function (err) {
+        if (err) {
+            console.log(err)
+            return
+        }
+        res.redirect('/cont')
+    })
+})
+
+// busca de resgistro da tabela contas
+app.post('/buscconta/', (req, res) => {
+    const id_da_conta = req.body.id_da_conta
+
+    const sql = `SELECT * FROM contas WHERE id_da_conta = ${id_da_conta}`
+
+    conn.query(sql, function (err, data) {
+        if (err) {
+            console.log(err)
+            return
+        }
+        const listarCont = data[0]
+        res.render('conta', { layout: false, listarCont })
+    })
+})
+
 //conexao com o banco de dados
 const conn = mysql.createConnection({
     host: 'localhost',
-    port: '3306', //mudar a porta de acordo com xampp
+    port: '3306',
     user: 'root',
     password: '',
-    database: 'banco' //  muda o nome do banco de vcs
+    database: 'banco'
 
 })
 
