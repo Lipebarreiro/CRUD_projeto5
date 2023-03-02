@@ -665,7 +665,7 @@ app.get('/cont/:id_da_conta', (req, res) => {
             return
         }
         const listarCont = data[0]
-        res.render('conta', { layout: false, listarCont })
+        res.render('contas', { layout: false, listarCont })
     })
 })
 
@@ -733,7 +733,7 @@ app.post('/buscconta/', (req, res) => {
             return
         }
         const listarCont = data[0]
-        res.render('conta', { layout: false, listarCont })
+        res.render('contas', { layout: false, listarCont })
     })
 })
 
