@@ -11,7 +11,7 @@ const app = express()
 app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
 
-app.use(express.static('publico'))
+app.use('/publico', express.static(__dirname + '/publico'))
 
 // rotas
 app.get('/', (req, res) => {
@@ -519,7 +519,7 @@ app.post('/cartao/insertcartao', (req, res) => {
 })
 
 // consulta geral da tabela cartao
-app.get('/cartoes', (req, res) => {
+app.get('/cart', (req, res) => {
     const sql = 'SELECT * FROM cartao'
 
     conn.query(sql, function (err, data) {
@@ -529,7 +529,7 @@ app.get('/cartoes', (req, res) => {
         }
         const listar = data
         console.log(listar)
-        res.render('cartoes', { layout: false, listar })
+        res.render('cart', { layout: false, listar })
     })
 })
 
@@ -596,7 +596,7 @@ app.get('/cartao/remove/:iddocartao', (req, res) => {
             console.log(err)
             return
         }
-        res.redirect('/cartoes')
+        res.redirect('/cart')
         console.log("excluido com sucesso")
     })
 })
