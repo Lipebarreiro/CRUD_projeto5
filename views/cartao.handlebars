@@ -1,21 +1,12 @@
 <h1>Informações do cliente</h1>
 
-<h1> {{listarCartao.iddocartao}} </h1>
+<h3> {{listarCartao.iddocartao}} </h3>
+<p>Número do cartão: {{listarCartao.coddeseg}} </p>
+<p>Data de validade: {{listarCartao.dataexp}} </p>
+<p>Tipo de cartão: {{listarCartao.tipodecartao}} </p>
+<p>Limite: {{listarCartao.limitecartao}} </p>
+<p>Saldo: {{listarCartao.saldocartao}} </p>
 
-
-<p>numero do cartao: {{listarCartao.coddeseg}} </p>
-
-<p>data de validade: {{listarCartao.dataexp}} </p>
-
-<p>Tipo de cartao Credito ou Debito : {{listarCartao.tipodecartao}} </p>
-
-<p>limite: {{listarCartao.limitecartao}} </p>
-
-<p> saldo:  {{listarCartao.saldocartao}} anos </p>
- 
 <a href="/cartao/editCart/{{listarCartao.iddocartao}}"> EDITAR</a>
-
-<br> <br>
-
+<br><br>
 <a href="/cartao/remove/{{listarCartao.iddocartao}}"> EXCLUIR</a>
-

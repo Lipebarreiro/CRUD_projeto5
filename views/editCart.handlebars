@@ -12,31 +12,28 @@
     <form action="/alterar/updateclient" method="POST">
         <div class="form control">
             <input type="hidden" name="iddocartao" id="iddocartao" value="{{cartao.iddocartao}}">
-            <label for="nome">numero do cartao</label>
-            <input type="text" name="coddeseg" placeholder="Digite aqui o nome do cartao" value="{{cartao.coddeseg}}">
+            <label for="nome">Número do cartão</label>
+            <input type="text" name="coddeseg" placeholder="Digite aqui o número do cartao" value="{{cartao.coddeseg}}">
         </div>
 
         <div class="form control">
-            <label for="email">data de validade</label>
-            <input type="text" name="dataexp" placeholder="Digite aqui o email do cartao" value="{{cartao.dataexp}}">
+            <label for="email">Data de validade</label>
+            <input type="text" name="dataexp" placeholder="Digite a data de validade do cartão" value="{{cartao.dataexp}}">
         </div>
 
         <div class="form control">
-            <label for="telefone">tipo de cartao</label>
-            <input type="text" name="tipodecartao" placeholder="Digite aqui o telefone do cliente"
-                value="{{cartao.tipodecartao}}">
+            <label for="telefone">Tipo de cartão</label>
+            <input type="text" name="tipodecartao" placeholder="Digite o tipo de cartão" value="{{cartao.tipodecartao}}">
         </div>
 
         <div class="form control">
-            <label for="idade">limite do cartao</label>
-            <input type="text" name="limitecartao" placeholder="Digite aqui o idade do cliente"
-                value="{{cartao.limitecartao}}">
+            <label for="idade">Limite do cartao</label>
+            <input type="text" name="limitecartao" placeholder="Digite o limite do cartão" value="{{cartao.limitecartao}}">
         </div>
 
         <div class="form control">
-            <label for="idade">saldo do cartao</label>
-            <input type="text" name="saldocartao" placeholder="Digite aqui o idade do cliente"
-                value="{{cartao.saldocartao}}">
+            <label for="idade">Saldo do cartão</label>
+            <input type="text" name="saldocartao" placeholder="Digite o saldo do cartão" value="{{cartao.saldocartao}}">
         </div>
 
         <input type="Submit" value="Editar">

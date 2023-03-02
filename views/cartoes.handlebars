@@ -1,12 +1,19 @@
-<h1> Clientes cadastrados</h1>
+<h1> Cartões cadastrados</h1>
 
-<class="prod-container">
+<div class="prod-container">
     {{#each listar}}
 
-    <strong>#{{this.iddocartao}} </strong> -
-    Codigo de segurança: <a href="/cartao/{{this.iddocartao}}"> {{coddeseg}} </a> - Data de Validade: {{dataexp}} - Tipo
-    do cartao {{tipodecartao}} - Limite {{limitecartao}} - Saldo {{saldocartao}} <br> <br>
-
-
+    <strong> #{{this.iddocartao}}</strong> -
+    <a href="/cartao/{{this.iddocartao}}">{{coddeseg}}</a>
+    <br><br>
+    - Data de validade: {{dataexp}}
+    <br>
+    - Tipo do cartão: {{tipodecartao}}
+    <br>
+    - Limite: {{limitecartao}}
+    <br>
+    - Saldo: {{saldocartao}}
+    <br><br>
     {{/each}}
-    </div>
+
+</div>

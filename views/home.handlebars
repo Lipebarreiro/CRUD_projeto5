@@ -18,15 +18,15 @@
         <h1>Cadastro de cliente</h1>
         <form action="prod/insertprod" method="post">
             <div class="form-group">
-                <label for="exampleInputEmail1">Digite seu nome</label>
+                <label for="exampleInputEmail1">Nome</label>
                 <input type="text" class="form-control" id="exampleInputNomecliente" name="nome_cliente"
-                    aria-describedby="emailHelp" placeholder="Digite seu nome">
+                    aria-describedby="emailHelp" placeholder="Digite o seu nome">
             </div>
 
             <div class="form-group">
-                <label for="exampleInputCpf1">Digite o seu CPF</label>
+                <label for="exampleInputCpf1">CPF</label>
                 <input type="text" class="form-control" id="exampleInputCpf" name="cpf" aria-describedby="emailHelp"
-                    placeholder="CPF">
+                    placeholder="Digite o seu CPF">
             </div>
 
             <div class="form-group">
@@ -48,7 +48,7 @@
 
             <div class="form-group">
                 <label for="exampleInputEmprestimo1">Empréstimo</label>
-                <input type="number" class="form-control" id="exampleInputEmprestimo" name="id_do_emprestimo"
+                <input type="number" class="form-control" id="" name="id_do_emprestimo"
                     placeholder="Digite o ID do emprestimo">
             </div>
 
@@ -72,40 +72,38 @@
         </form>
     </div>
 
-    {{!-- Tabela emprestimo --}}
+    {{!-- Tabela empréstimo --}}
     <div class="algo">
         <h1>Cadastro de empréstimo</h1>
         <form action="emp/insertemp" method="post">
             <div class="form-group">
-                <label for="exampleInputEmail1">Digite seu nome</label>
+                <label for="exampleInputEmail1">Nome</label>
                 <input type="text" class="form-control" id="exampleInputNomecliente" name="nome_cliente"
-                    aria-describedby="emailHelp" placeholder="Digite seu nome">
+                    aria-describedby="emailHelp" placeholder="Digite o seu nome">
             </div>
 
             <div class="form-group">
-                <label for="exampleInputCpf1">valor emprestimo</label>
+                <label for="exampleInputCpf1">Valor do empréstimo</label>
                 <input type="text" class="form-control" id="exampleInputCpf" name="emprestimo"
-                    aria-describedby="emailHelp" placeholder="CPF">
+                    aria-describedby="emailHelp" placeholder="Digite o valor do empréstimo">
             </div>
 
             <div class="form-group">
-                <label for="exampleInputEmail1">parcelas</label>
-                <input class="form-control" id="exampleInputEmail1" name="parcelas" placeholder="Digite seu email">
+                <label for="exampleInputEmail1">Parcelas</label>
+                <input class="form-control" id="exampleInputEmail1" name="parcelas"
+                    placeholder="Digite a quantidade de parcelas">
             </div>
 
             <div class="form-group">
-                <label for="exampleInputEmail1">juros</label>
-                <input type="number" class="form-control" id="exampleInputTelefone" name="juros"
-                    placeholder="Digite um número para contato">
+                <label for="exampleInputEmail1">Juros</label>
+                <input type="text" class="form-control" id="" name="juros" placeholder="Digite a porcentagem de juros">
             </div>
 
             <div class="form-group">
-                <label for="exampleInputEmail1">data</label>
-                <input type="number" class="form-control" id="exampleInputTelefone" name="data"
-                    placeholder="Digite um número para contato">
+                <label for="exampleInputEmail1">Data</label>
+                <input type="text" class="form-control" id="exampleInputTelefone" name="data"
+                    placeholder="Digite a data do empréstimo">
             </div>
-
-
 
             <div class="form-group">
                 <small class="form-text text-muted">Nunca vamos compartilhar seus dados, com ninguém.</small>
@@ -120,20 +118,21 @@
         <h1>Cadastro de agência</h1>
         <form action="age/insertage" method="post">
             <div class="form-group">
-                <label for="exampleInputEmail1">endereço</label>
-                <input type="text" class="form-control" id="exampleInputNomecliente" name="endereco"
-                    aria-describedby="emailHelp" placeholder="Digite seu nome">
+                <label for="exampleInputEmail1">Endereço</label>
+                <input type="text" class="form-control" id="" name="endereco" aria-describedby="emailHelp"
+                    placeholder="Digite o seu endereço ">
             </div>
 
             <div class="form-group">
-                <label for="exampleInputCpf1">email</label>
+                <label for="exampleInputCpf1">Email</label>
                 <input type="text" class="form-control" id="exampleInputCpf" name="email" aria-describedby="emailHelp"
-                    placeholder="CPF">
+                    placeholder="Digite o seu email">
             </div>
 
             <div class="form-group">
-                <label for="exampleInputEmail1">telefone</label>
-                <input class="form-control" id="exampleInputEmail1" name="telefone" placeholder="Digite seu email">
+                <label for="exampleInputEmail1">Telefone</label>
+                <input class="form-control" id="exampleInputEmail1" name="telefone"
+                    placeholder="Digite um número para contato">
             </div>
 
             <div class="form-group">
@@ -151,23 +150,24 @@
             <div class="form-group">
                 <label for="exampleInputEmail1">Nome</label>
                 <input type="text" class="form-control" id="exampleInputNomecliente" name="nome"
-                    aria-describedby="emailHelp" placeholder="Digite seu nome">
+                    aria-describedby="emailHelp" placeholder="Digite o seu nome">
             </div>
 
             <div class="form-group">
                 <label for="exampleInputCpf1">CPF</label>
                 <input type="text" class="form-control" id="exampleInputCpf" name="cpf" aria-describedby="emailHelp"
-                    placeholder="CPF">
+                    placeholder="Digite o seu CPF">
             </div>
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Email</label>
-                <input class="form-control" id="exampleInputEmail1" name="email" placeholder="Digite seu email">
+                <input class="form-control" id="exampleInputEmail1" name="email" placeholder="Digite o seu email">
             </div>
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Telefone</label>
-                <input class="form-control" id="exampleInputEmail1" name="telefone" placeholder="Digite seu telefone">
+                <input class="form-control" id="exampleInputEmail1" name="telefone"
+                    placeholder="Digite um número para contato">
             </div>
 
             <div class="form-group">
@@ -183,33 +183,77 @@
         </form>
     </div>
 
+
+    {{!-- Tabela contas --}}
+    <div class="algo">
+        <h1>Cadastro de conta</h1>
+        <form action="cont/insertcont" method="post">
+            <div class="form-group">
+                <label for="exampleInputCpf1">Nome do cliente</label>
+                <input type="text" class="form-control" id="" name="nome_cliente"
+                    placeholder="Digite o nome do cliente">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Id do cliente</label>
+                <input type="number" class="form-control" id="" name="id_do_cliente"
+                    placeholder="Digite o ID do cliente">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Tipo de conta</label>
+                <input class="form-control" id="" name="tipo_de_conta" placeholder="Digite o tipo de conta">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Saldo da conta</label>
+                <input type="number" class="form-control" id="" name="saldo" placeholder="Digite o saldo da conta">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputAdress1">Id da agência</label>
+                <input type="number" class="form-control" id="" name="id_da_agencia"
+                    placeholder="Digite o ID da agência">
+            </div>
+
+            <div class="form-group">
+                <small class="form-text text-muted">Nunca vamos compartilhar seus dados, com ninguém.</small>
+                <input class="enviar" type="submit">
+            </div>
+        </form>
+    </div>
+
+
+
     {{!-- Tabela cartao --}}
     <div class="algo">
         <h1>Cadastro de cartões</h1>
         <form action="cartao/insertcartao" method="post">
             <div class="form-group">
                 <label for="exampleInputEmail1">Código de segurança</label>
-                <input type="text" class="form-control" id="" name="coddeseg" placeholder="">
+                <input type="text" class="form-control" id="" name="coddeseg"
+                    placeholder="Digite o código de segurança">
             </div>
 
             <div class="form-group">
                 <label for="exampleInputCpf1">Data de validade</label>
-                <input type="text" class="form-control" id="exampleInputCpf" name="dataexp" placeholder="">
+                <input type="text" class="form-control" id="exampleInputCpf" name="dataexp"
+                    placeholder="Digite a data de validade do cartão">
             </div>
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Tipo de cartão</label>
-                <input class="form-control" id="" name="tipodecartao" placeholder="">
+                <input class="form-control" id="" name="tipodecartao" placeholder="Digite o tipo de cartão">
             </div>
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Limite do cartão</label>
-                <input class="form-control" id="" name="limitecartao" placeholder="">
+                <input class="form-control" id="" name="limitecartao" placeholder="Digite o limite do cartão">
             </div>
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Saldo do cartão</label>
-                <input class="form-control" id="" name="saldocartao" placeholder="">
+                <input class="form-control" id="" name="saldocartao" placeholder="Digite o saldo do cartão">
             </div>
 
             <div class="form-group">
