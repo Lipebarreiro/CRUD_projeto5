@@ -11,24 +11,36 @@
 <body>
     <form action="/alterar/updateclient" method="POST">
         <div class="form control">
-            <input type="hidden" name="iddocartao" id="iddocartao" value="{{cartao.iddocartao}}">
-            <label for="nome">Número do cartão</label>
-            <input type="text" name="coddeseg" placeholder="Digite aqui o número do cartao" value="{{cartao.coddeseg}}">
+            <input type="hidden" name="id_do_cartao" id="id_do_cartao" value="{{cartao.id_do_cartao}}">
+        </div>
+
+        <div class="form control">
+            <label for="email">Número do cartão</label>
+            <input type="text" name="numero_do_cartao" placeholder="Digite o número do cartão"
+                value="{{cartao.numero_do_cartao}}">
+        </div>
+
+        <div class="form control"></div>
+        <label for="nome">Código de segurança</label>
+        <input type="text" name="coddeseg" placeholder="Digite aqui o número do cartao" value="{{cartao.coddeseg}}">
         </div>
 
         <div class="form control">
             <label for="email">Data de validade</label>
-            <input type="text" name="dataexp" placeholder="Digite a data de validade do cartão" value="{{cartao.dataexp}}">
+            <input type="text" name="dataexp" placeholder="Digite a data de validade do cartão"
+                value="{{cartao.dataexp}}">
         </div>
 
         <div class="form control">
             <label for="telefone">Tipo de cartão</label>
-            <input type="text" name="tipodecartao" placeholder="Digite o tipo de cartão" value="{{cartao.tipodecartao}}">
+            <input type="text" name="tipodecartao" placeholder="Digite o tipo de cartão"
+                value="{{cartao.tipodecartao}}">
         </div>
 
         <div class="form control">
             <label for="idade">Limite do cartao</label>
-            <input type="text" name="limitecartao" placeholder="Digite o limite do cartão" value="{{cartao.limitecartao}}">
+            <input type="text" name="limitecartao" placeholder="Digite o limite do cartão"
+                value="{{cartao.limitecartao}}">
         </div>
 
         <div class="form control">

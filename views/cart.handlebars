@@ -3,9 +3,11 @@
 <div class="prod-container">
     {{#each listar}}
 
-    <strong> #{{this.iddocartao}}</strong> -
-    <a href="/cartao/{{this.iddocartao}}">{{coddeseg}}</a>
+    <strong> #{{this.id_do_cartao}}</strong> -
+    <a href="/cartao/{{this.id_do_cartao}}">{{numero_do_cartao}}</a>
     <br><br>
+    - Código de segurança: {{coddeseg}}
+    <br>
     - Data de validade: {{dataexp}}
     <br>
     - Tipo do cartão: {{tipodecartao}}

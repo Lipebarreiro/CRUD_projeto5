@@ -15,7 +15,7 @@ app.use('/publico', express.static(__dirname + '/publico'))
 
 // rotas
 app.get('/', (req, res) => {
-    res.render('home', { layout: false })
+    res.render('cadastro', { layout: false })
 })
 
 //rota do buscar
@@ -30,7 +30,7 @@ app.use(
 )
 
 // inserir dados na tabela clientes
-app.post('/prod/insertprod', (req, res) => {
+app.post('/clie/insertclie', (req, res) => {
     const nome_cliente = req.body.nome_cliente
     const cpf = req.body.cpf
     const email = req.body.email
@@ -52,7 +52,7 @@ app.post('/prod/insertprod', (req, res) => {
 })
 
 // consulta geral da tabela clientes
-app.get('/prod', (req, res) => {
+app.get('/clie', (req, res) => {
 
     const sql = 'SELECT * FROM clientes'
     conn.query(sql, function (err, data) {
@@ -62,12 +62,12 @@ app.get('/prod', (req, res) => {
         }
         const listar = data
         console.log(listar)
-        res.render('prod', { layout: false, listar })
+        res.render('clie', { layout: false, listar })
     })
 })
 
 // consulta um registro pelo id(produto.handlebars) da tabela clientes
-app.get('/prod/:id_do_cliente', (req, res) => {
+app.get('/clie/:id_do_cliente', (req, res) => {
     const id_do_cliente = req.params.id_do_cliente
 
     const sql = `SELECT * FROM clientes WHERE id_do_cliente = ${id_do_cliente}`
@@ -77,13 +77,13 @@ app.get('/prod/:id_do_cliente', (req, res) => {
             console.log(err)
             return
         }
-        const listarProd = data[0]
-        res.render('clientes', { layout: false, listarProd })
+        const listarClie = data[0]
+        res.render('clientes', { layout: false, listarClie })
     })
 })
 
 // pegando para editar registro da tabela clientes
-app.get('/prod/edit/:id_do_cliente', (req, res) => {
+app.get('/clie/edit/:id_do_cliente', (req, res) => {
     const id_do_cliente = req.params.id_do_cliente
     const sql = `SELECT * FROM clientes where id_do_cliente = ${id_do_cliente}`
 
@@ -92,13 +92,13 @@ app.get('/prod/edit/:id_do_cliente', (req, res) => {
             console.log(err)
             return
         }
-        const prod = data[0]
-        res.render('edit', { layout: false, prod })
+        const clie = data[0]
+        res.render('edit', { layout: false, clie })
     })
 })
 
 // editando o registro com post na tabela clientes
-app.post('/prod/updateprod', (req, res) => {
+app.post('/clie/updateclie', (req, res) => {
     const id_do_cliente = req.body.id_do_cliente
     const nome_cliente = req.body.nome_cliente
     const cpf = req.body.cpf
@@ -116,12 +116,12 @@ app.post('/prod/updateprod', (req, res) => {
             console.log(err)
             return
         }
-        res.redirect('/prod')
+        res.redirect('/clie')
     })
 })
 
 // deletar registro da tabela clientes
-app.get('/prod/remove/:id_do_cliente', (req, res) => {
+app.get('/clie/remove/:id_do_cliente', (req, res) => {
     const id_do_cliente = req.params.id_do_cliente
 
     const sql = `DELETE FROM clientes WHERE id_do_cliente = '${id_do_cliente}'`
@@ -131,7 +131,7 @@ app.get('/prod/remove/:id_do_cliente', (req, res) => {
             console.log(err)
             return
         }
-        res.redirect('/prod')
+        res.redirect('/clie')
     })
 })
 
@@ -147,8 +147,8 @@ app.post('/busc/', (req, res) => {
             console.log(err)
             return
         }
-        const listarProd = data[0]
-        res.render('clientes', { layout: false, listarProd })
+        const listarClie = data[0]
+        res.render('clientes', { layout: false, listarClie })
     })
 })
 
@@ -503,12 +503,13 @@ app.post('/buscaF/', (req, res) => {
 
 // inserir dados na tabela cartao
 app.post('/cartao/insertcartao', (req, res) => {
+    const numero_do_cartao = req.body.numero_do_cartao
     const coddeseg = req.body.coddeseg
     const dataexp = req.body.dataexp
     const tipodecartao = req.body.tipodecartao
     const limitecartao = req.body.limitecartao
     const saldocartao = req.body.saldocartao
-    const sql = `INSERT INTO cartao (coddeseg, dataexp, tipodecartao, limitecartao, saldocartao) VALUES ( '${coddeseg}','${dataexp}','${tipodecartao}','${limitecartao}','${saldocartao}')`
+    const sql = `INSERT INTO cartao (numero_do_cartao,coddeseg, dataexp, tipodecartao, limitecartao, saldocartao) VALUES ( '${numero_do_cartao}','${coddeseg}','${dataexp}','${tipodecartao}','${limitecartao}','${saldocartao}')`
     conn.query(sql, function (err) {
         if (err) {
             console.log(err)
@@ -534,11 +535,11 @@ app.get('/cart', (req, res) => {
 })
 
 
-// consulta um registro pelo iddocartao (cartao.handlebars) na tabela cartao
-app.get('/cartao/:iddocartao', (req, res) => {
-    const iddocartao = req.params.iddocartao
+// consulta um registro pelo id_do_cartao (cartao.handlebars) na tabela cartao
+app.get('/cartao/:id_do_cartao', (req, res) => {
+    const id_do_cartao = req.params.id_do_cartao
 
-    const sql = `SELECT * FROM cartao WHERE iddocartao = ${iddocartao}`
+    const sql = `SELECT * FROM cartao WHERE id_do_cartao = ${id_do_cartao}`
 
     conn.query(sql, function (err, data) {
         if (err) {
@@ -551,10 +552,10 @@ app.get('/cartao/:iddocartao', (req, res) => {
 })
 
 // pegando para editar registro da tabela cartao
-app.get('/cartao/editCart/:iddocartao', (req, res) => {
-    const iddocartao = req.params.iddocartao
+app.get('/cartao/editCart/:id_do_cartao', (req, res) => {
+    const id_do_cartao = req.params.id_do_cartao
 
-    const sql = `SELECT * FROM cartao WHERE iddocartao = ${iddocartao}`
+    const sql = `SELECT * FROM cartao WHERE id_do_cartao = ${id_do_cartao}`
 
     conn.query(sql, function (err, data) {
         if (err) {
@@ -568,28 +569,29 @@ app.get('/cartao/editCart/:iddocartao', (req, res) => {
 
 // editando o registro com post na tabela cartao
 app.post('/alterar/updateclient', (req, res) => {
-    const iddocartao = req.body.iddocartao
+    const id_do_cartao = req.body.id_do_cartao
+    const numero_do_cartao = req.body.numero_do_cartao
     const coddeseg = req.body.coddeseg
     const dataexp = req.body.dataexp
     const tipodecartao = req.body.tipodecartao
     const limitecartao = req.body.limitecartao
     const saldocartao = req.body.saldocartao
-    const sql = `UPDATE cartao SET coddeseg = '${coddeseg}', dataexp = '${dataexp}', tipodecartao = '${tipodecartao}', limitecartao= '${limitecartao}', saldocartao = '${saldocartao}' WHERE iddocartao = '${iddocartao}' `
+    const sql = `UPDATE cartao SET numero_do_cartao = '${numero_do_cartao}', coddeseg = '${coddeseg}', dataexp = '${dataexp}', tipodecartao = '${tipodecartao}', limitecartao= '${limitecartao}', saldocartao = '${saldocartao}' WHERE id_do_cartao = '${id_do_cartao}' `
 
     conn.query(sql, function (err) {
         if (err) {
             console.log(err)
         }
-        res.redirect(`/cartao/${iddocartao}`)
+        res.redirect(`/cartao/${id_do_cartao}`)
         console.log("Alterado com sucesso")
     })
 })
 
 // deletar registro da tabela cartao
-app.get('/cartao/remove/:iddocartao', (req, res) => {
-    const iddocartao = req.params.iddocartao
+app.get('/cartao/remove/:id_do_cartao', (req, res) => {
+    const id_do_cartao = req.params.id_do_cartao
 
-    const sql = `DELETE FROM cartao WHERE iddocartao = ${iddocartao} `
+    const sql = `DELETE FROM cartao WHERE id_do_cartao = ${id_do_cartao} `
 
     conn.query(sql, function (err) {
         if (err) {
@@ -603,9 +605,9 @@ app.get('/cartao/remove/:iddocartao', (req, res) => {
 
 // busca de resgistro na tabela cartao
 app.post('/buscarcart/', (req, res) => {
-    const iddocartao = req.body.iddocartao
+    const id_do_cartao = req.body.id_do_cartao
 
-    const sql = `SELECT * FROM cartao WHERE iddocartao = ${iddocartao}`
+    const sql = `SELECT * FROM cartao WHERE id_do_cartao = ${id_do_cartao}`
 
     conn.query(sql, function (err, data) {
         if (err) {
@@ -736,6 +738,41 @@ app.post('/buscconta/', (req, res) => {
         res.render('contas', { layout: false, listarCont })
     })
 })
+
+
+
+
+
+
+// comando do professor de busca 03/03/2023
+
+// busca por nome ou parte dele
+// app.post('/buscnome/', (req, res) => {
+//     const id = req.body.nome
+//     const sql = `SELECT * FROM produto WHERE nome like '${id}%'`
+
+//     conn.query(sql, function(err, data){
+//        if(err){
+//        console.log(err)
+//         return
+//       }
+
+//        const listarProd = data
+//        res.render('produto', {  layout: false, listarProd } )
+//        }
+//        )
+
+//       })
+
+
+
+
+
+
+
+
+
+
 
 //conexao com o banco de dados
 const conn = mysql.createConnection({

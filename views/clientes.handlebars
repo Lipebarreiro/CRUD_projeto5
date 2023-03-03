@@ -8,20 +8,20 @@
     <title>Document</title>
 </head>
 
-<body style="background-color: blue;">
+<body style="background-color: rgb(108, 7, 181);">
     <h1>Cliente</h1>
-    <h3>{{listarProd.nome_cliente}}</h3>
-    <p>CPF: {{listarProd.cpf}}</p>
-    <p>Email: {{listarProd.email}}</p>
-    <p>Telefone: {{listarProd.telefone}}</p>
-    <p>Endereço: {{listarProd.endereco_cliente}}</p>
-    <p>ID do Empéstimo: {{listarProd.id_do_emprestimo}}</p>
-    <p>ID do Cartão: {{listarProd.id_do_cartao}}</p>
-    <p>ID da Agência: {{listarProd.id_da_agencia}}</p>
+    <h3>{{listarClie.nome_cliente}}</h3>
+    <p>CPF: {{listarClie.cpf}}</p>
+    <p>Email: {{listarClie.email}}</p>
+    <p>Telefone: {{listarClie.telefone}}</p>
+    <p>Endereço: {{listarClie.endereco_cliente}}</p>
+    <p>ID do Empéstimo: {{listarClie.id_do_emprestimo}}</p>
+    <p>ID do Cartão: {{listarClie.id_do_cartao}}</p>
+    <p>ID da Agência: {{listarClie.id_da_agencia}}</p>
 
 
-    <a href="/prod/edit/{{listarProd.id_do_cliente}}"> Editar</a>
-    <a href="/prod/remove/{{listarProd.id_do_cliente}}"> Excluir</a>
+    <a href="/clie/edit/{{listarClie.id_do_cliente}}"> Editar</a>
+    <a href="/clie/remove/{{listarClie.id_do_cliente}}"> Excluir</a>
 
 
 
