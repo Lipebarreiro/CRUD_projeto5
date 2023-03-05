@@ -27,12 +27,7 @@
 git clone https://github.com/Lipebarreiro/CRUD_projeto5.git
 ```
 * Abra a pasta do clone e instale as dependências do projeto com o comando:
-
-```cmd
-# Abrir pasta do clone 
-cd CRUD_projeto5.git
-
-# Instalar as dependências do projeto
+```Terminal
 npm install
 ```
 * Importe o arquivo do banco de dados - <kbd>banco.sql</kbd> - para um SGBD (<em>Sistema de Gerenciamento de Banco de Dados</em>), como o <strong>MySQL Workbench</strong> ou pelo phpMyAdmin do <strong>XAMPP</strong>. OBS.: Se atente a porta de conexão com o banco de dados. A porta configurada é a 3307.
