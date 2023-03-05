@@ -58,7 +58,7 @@ npm start
 <table>
   <tr>
     <td align="center">
-      <img src="" width="140" height="180"/> <br>
+      <img src="" width="170" height="170"/> <br>
       <a href="https://github.com/BrenoRicardo">Breno Ricardo</a>
     </td>
     <td align="center">
@@ -74,7 +74,7 @@ npm start
       <a href="https://github.com/Guippacheco">Guilherme Pacheco</a>
     </td>
     <td align="center">
-      <img src="" width="150" height="170"/> <br>
+      <img src="" width="170" height="170"/> <br>
       <a href="https://github.com/EduardaMarcos">Maria Eduarda</a>
     </td>
     <td align="center">
