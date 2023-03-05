@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Mar-2023 às 20:43
+-- Tempo de geração: 05-Mar-2023 às 23:18
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -39,7 +39,8 @@ CREATE TABLE `agencia` (
 --
 
 INSERT INTO `agencia` (`id_da_agencia`, `endereco`, `email`, `telefone`) VALUES
-(1, 'Madureira', 'exemplo@gmail.com', '21649075139');
+(205, 'Rua exemplo 99, Taquara', 'exemplo205@gmail.com', '2164907513'),
+(215, 'Rua exemplo 99, Anchieta', 'agencia215@gmail.com', '2130453495');
 
 -- --------------------------------------------------------
 
@@ -50,7 +51,7 @@ INSERT INTO `agencia` (`id_da_agencia`, `endereco`, `email`, `telefone`) VALUES
 CREATE TABLE `cartao` (
   `id_do_cartao` int(11) NOT NULL,
   `numero_do_cartao` bigint(20) NOT NULL,
-  `coddeseg` bigint(11) NOT NULL,
+  `coddeseg` int(3) NOT NULL,
   `dataexp` varchar(20) NOT NULL,
   `tipodecartao` varchar(20) NOT NULL,
   `limitecartao` int(100) NOT NULL,
@@ -62,9 +63,9 @@ CREATE TABLE `cartao` (
 --
 
 INSERT INTO `cartao` (`id_do_cartao`, `numero_do_cartao`, `coddeseg`, `dataexp`, `tipodecartao`, `limitecartao`, `saldocartao`) VALUES
-(1, 0, 215759654, '02/2030', 'Crédito', 5000, 2500),
-(2, 0, 753159852, '01/2028', 'Débito', 3500, 1200),
-(3, 0, 786324950, '12/2028', 'Débito', 4200, 2200);
+(1, 9264829137895550, 156, '02/2030', 'Crédito', 5000, 2500),
+(2, 4973698142987216, 432, '01/2028', 'Débito', 3500, 1200),
+(3, 1648721934258149, 753, '12/2028', 'Débito', 4200, 2100);
 
 -- --------------------------------------------------------
 
@@ -80,19 +81,18 @@ CREATE TABLE `clientes` (
   `telefone` bigint(20) NOT NULL,
   `endereco_cliente` varchar(30) NOT NULL,
   `id_do_emprestimo` int(11) NOT NULL,
-  `id_do_cartao` int(11) NOT NULL,
-  `id_da_agencia` int(11) NOT NULL
+  `numero_do_cartao` bigint(11) NOT NULL,
+  `id_da_agencia` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `clientes`
 --
 
-INSERT INTO `clientes` (`id_do_cliente`, `nome_cliente`, `cpf`, `email`, `telefone`, `endereco_cliente`, `id_do_emprestimo`, `id_do_cartao`, `id_da_agencia`) VALUES
-(1, 'Felipe Barreiro', 15935786252, 'lipebarreiro3@gmail.com', 21999998888, 'Madureira', 13, 565, 155),
-(2, 'Maria Eduarda', 46575315958, 'eduarda@gmail.com', 21987556145, 'Guadalupe', 24, 21, 105),
-(3, 'Breno Ricardo', 24986135746, 'breno@gmail.com', 21840628154, 'Taquara', 42, 81, 205),
-(4, 'Kaylane Mattos', 15935745685, 'kaylane@gmail.com', 21972465914, 'Anchieta', 45, 62, 215);
+INSERT INTO `clientes` (`id_do_cliente`, `nome_cliente`, `cpf`, `email`, `telefone`, `endereco_cliente`, `id_do_emprestimo`, `numero_do_cartao`, `id_da_agencia`) VALUES
+(1, 'Breno Ricardo Andrade', 24986135746, 'breno@gmail.com', 21840628154, 'Rua exemplo 99, Taquara', 42, 1054791350164857, 205),
+(2, 'Kaylane Mattos Silva', 15935745685, 'kaylane@gmail.com', 21972465914, 'Rua exemplo 99, Anchieta', 45, 6301496375102648, 215),
+(3, 'Luis Guilherme Pacheco', 65475315965, 'guipacheco@gmail.com', 21982175364, 'Rua exemplo 85, Bonsucesso', 32, 1657420987610357, 315);
 
 -- --------------------------------------------------------
 
@@ -162,8 +162,9 @@ CREATE TABLE `funcionarios` (
 --
 
 INSERT INTO `funcionarios` (`id_funcionario`, `nome`, `cpf`, `email`, `telefone`, `cargo`) VALUES
-(1, 'Felipe Barreiro', '45335175985', 'lipebarreiro3@gmail.com', '21999998889', 'Tecnico'),
-(2, 'Maria Eduarda', '16597214256', 'eduarda@gmail.com', '21497214578', 'Tecnica');
+(1, 'Felipe Barreiro Nascimento', '45335175985', 'lipebarreiro3@gmail.com', '21999998889', 'Técnico'),
+(2, 'Maria Eduarda Pereira', '16597214256', 'eduarda@gmail.com', '21497214578', 'Técnica'),
+(3, 'Yuri Leonor Lopes', '15795345685', 'yurilopes@gmail.com', '21453789645', 'Técnico');
 
 --
 -- Índices para tabelas despejadas
@@ -213,7 +214,7 @@ ALTER TABLE `funcionarios`
 -- AUTO_INCREMENT de tabela `agencia`
 --
 ALTER TABLE `agencia`
-  MODIFY `id_da_agencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_da_agencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=406;
 
 --
 -- AUTO_INCREMENT de tabela `cartao`
