@@ -37,10 +37,10 @@ app.post('/clie/insertclie', (req, res) => {
     const telefone = req.body.telefone
     const endereco_cliente = req.body.endereco_cliente
     const id_do_emprestimo = req.body.id_do_emprestimo
-    const id_do_cartao = req.body.id_do_cartao
+    const numero_do_cartao = req.body.numero_do_cartao
     const id_da_agencia = req.body.id_da_agencia
 
-    const sql = `INSERT INTO clientes (nome_cliente,cpf,email,telefone,endereco_cliente,id_do_emprestimo,id_do_cartao,id_da_agencia) VALUES ('${nome_cliente}','${cpf}','${email}','${telefone}','${endereco_cliente}','${id_do_emprestimo}','${id_do_cartao}','${id_da_agencia}')`
+    const sql = `INSERT INTO clientes (nome_cliente,cpf,email,telefone,endereco_cliente,id_do_emprestimo,numero_do_cartao,id_da_agencia) VALUES ('${nome_cliente}','${cpf}','${email}','${telefone}','${endereco_cliente}','${id_do_emprestimo}','${numero_do_cartao}','${id_da_agencia}')`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -106,10 +106,10 @@ app.post('/clie/updateclie', (req, res) => {
     const telefone = req.body.telefone
     const endereco_cliente = req.body.endereco_cliente
     const id_do_emprestimo = req.body.id_do_emprestimo
-    const id_do_cartao = req.body.id_do_cartao
+    const numero_do_cartao = req.body.numero_do_cartao
     const id_da_agencia = req.body.id_da_agencia
 
-    const sql = `UPDATE clientes SET nome_cliente = '${nome_cliente}', cpf = '${cpf}', email = '${email}', telefone = '${telefone}', endereco_cliente = '${endereco_cliente}', id_do_emprestimo = '${id_do_emprestimo}', id_do_cartao = '${id_do_cartao}', id_da_agencia = '${id_da_agencia}' WHERE id_do_cliente = ${id_do_cliente}`
+    const sql = `UPDATE clientes SET nome_cliente = '${nome_cliente}', cpf = '${cpf}', email = '${email}', telefone = '${telefone}', endereco_cliente = '${endereco_cliente}', id_do_emprestimo = '${id_do_emprestimo}', numero_do_cartao = '${numero_do_cartao}', id_da_agencia = '${id_da_agencia}' WHERE id_do_cliente = ${id_do_cliente}`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -766,18 +766,10 @@ app.post('/buscconta/', (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
 //conexao com o banco de dados
 const conn = mysql.createConnection({
     host: 'localhost',
-    port: '3307',
+    port: '3306',
     user: 'root',
     password: '',
     database: 'banco'
