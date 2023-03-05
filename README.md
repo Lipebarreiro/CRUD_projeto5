@@ -1,4 +1,4 @@
-<h1 align="center">Projeto CRUD_projeto5</h1>
+<h1 align="center">Projeto CRUD</h1>
 
 <div>
   <p>Esse projeto tem como finalidade desenvolver back-end de um banco. <br>O tema escolhido pelo Squad foi <kbd>Banco Financeiro</kbd>. As entidades presentes no banco de dados foram criadas tendo em mente uma instituição financeira.</p>
