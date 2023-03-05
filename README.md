@@ -34,7 +34,7 @@ cd CRUD_projeto5
 # Instalar as dependências do projeto
 npm install
 ```
-* Importe o arquivo do banco de dados - <kbd>banco.sql</kbd> - para um SGBD (<em>Sistema de Gerenciamento de Banco de Dados</em>), como o <strong>MySQL Workbench</strong> ou pelo phpMyAdmin do <strong>XAMPP</strong>. OBS.: Se atente a porta de conexão com o banco de dados. A porta configurada é a 3307.
+* Importe o arquivo do banco de dados - <kbd>banco.sql</kbd> - para um SGBD (<em>Sistema de Gerenciamento de Banco de Dados</em>), como o <strong>MySQL Workbench</strong> ou pelo phpMyAdmin do <strong>XAMPP</strong>. OBS.: Se atente a porta de conexão com o banco de dados. A porta configurada é a <strong>3307</strong>.
 
 * Inicie o servidor com o comando:
 
