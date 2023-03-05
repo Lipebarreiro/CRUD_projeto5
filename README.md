@@ -26,7 +26,7 @@
 ```cmd
 git clone https://github.com/Lipebarreiro/CRUD_projeto5.git
 ```
-* Abra a pasta do clone e instale as dependências do projeto com o comando:
+* Abra a pasta do clone e em seguida, instale as dependências do projeto com o comando:
 ```Terminal
 npm install
 ```
