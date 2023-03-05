@@ -769,7 +769,7 @@ app.post('/buscconta/', (req, res) => {
 //conexao com o banco de dados
 const conn = mysql.createConnection({
     host: 'localhost',
-    port: '3306',
+    port: '3307',
     user: 'root',
     password: '',
     database: 'banco'
