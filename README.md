@@ -74,7 +74,7 @@ npm start
       <a href="https://github.com/Guippacheco">Guilherme Pacheco</a>
     </td>
     <td align="center">
-      <img src="https://avatars.githubusercontent.com/u/114101867?v=4" width="150" height="170"/> <br>
+      <img src="" width="150" height="170"/> <br>
       <a href="https://github.com/EduardaMarcos">Maria Eduarda</a>
     </td>
     <td align="center">
