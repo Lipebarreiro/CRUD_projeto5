@@ -62,7 +62,7 @@ npm start
       <a href="https://github.com/BrenoRicardo">Breno Ricardo</a>
     </td>
     <td align="center">
-      <img src="" width="170" height="170"/> <br>
+      <img src="https://avatars.githubusercontent.com/u/114102258?v=4" width="170" height="170"/> <br>
       <a href="https://github.com/Lipebarreiro">Felipe Barreiro</a>
     </td>
       <td align="center">
