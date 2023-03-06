@@ -55,31 +55,13 @@ npm start
 
 <h2>🤝 Squad</h2>
 
-<table>
-  <tr>
-    <td align="center">
-      <img src="" width="170" height="170"/> <br>
-      <a href="https://github.com/BrenoRicardo">Breno Ricardo</a>
-    </td>
-    <td align="center">
-      <img src="https://avatars.githubusercontent.com/u/114102258?v=4" width="170" height="170"/> <br>
-      <a href="https://github.com/Lipebarreiro">Felipe Barreiro</a>
-    </td>
-      <td align="center">
-      <img src="" width="170" height="170"/> <br>
-      <a href="https://github.com/kaymattos">Kaylane Mattos</a>
-    </td>
-     <td align="center">
-      <img src="" width="170" height="170"/> <br>
-      <a href="https://github.com/Guippacheco">Guilherme Pacheco</a>
-    </td>
-    <td align="center">
-      <img src="" width="170" height="170"/> <br>
-      <a href="https://github.com/EduardaMarcos">Maria Eduarda</a>
-    </td>
-    <td align="center">
-      <img src="" width="170" height="170"/> <br>
-      <a href="https://github.com/yuurii75">Yuri Lopes</a>
-    </td>
-  </tr>
-</table>
+<ul>
+    <li><a href="https://github.com/BrenoRicardo">Breno Ricardo</a></li>
+    <li><a href="https://github.com/Lipebarreiro">Felipe Barreiro</a></li>
+    <li><a href="https://github.com/kaymattos">Kaylane Mattos</a></li>
+    <li><a href="https://github.com/Guippacheco">Guilherme Pacheco</a></li>
+    <li><a href="https://github.com/EduardaMarcos">Maria Eduarda</a></li>
+    <li><a href="https://github.com/yuurii75">Yuri Lopes</a></li>
+  </ul>
+</div>
+
